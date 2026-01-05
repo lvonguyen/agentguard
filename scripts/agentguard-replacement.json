@@ -1,0 +1,308 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "AgentGuard\n\nAI Security Governance Platform",
+          "font_size": 38.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "Series A Investment Opportunity • January 2026",
+          "font_name": "Georgia",
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "Platform Capabilities"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "Control Mapping"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Threat Modeling"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Policy Engine"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Observability"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "NIST AI RMF → 800-53 crosswalk with automated gap analysis"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "STRIDE + MITRE ATLAS for agent-specific threat identification"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "OPA-based sub-ms policy enforcement for tool access control"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "OpenTelemetry traces with LLM-specific span types"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "Maturity Model"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "Agent Registry"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "SDK Integration"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "GRC Portal"}]
+    },
+    "shape-13": {
+      "paragraphs": [{"text": "5-level AI security maturity assessment with industry benchmarking"}]
+    },
+    "shape-14": {
+      "paragraphs": [{"text": "Centralized inventory of agents, capabilities, and ownership"}]
+    },
+    "shape-15": {
+      "paragraphs": [{"text": "Python, Go, TypeScript SDKs for LangChain, CrewAI integration"}]
+    },
+    "shape-16": {
+      "paragraphs": [{"text": "Risk acceptance workflows and audit evidence collection"}]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "paragraphs": [{"text": "Product Roadmap"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "36-Month Path to Market Leadership"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Foundation"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Core Platform"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Enterprise"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "Q1 2026"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "Q2 2026"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "Q3 2026"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "Scale"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "FedRAMP"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "Global"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "Q4 2026"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "Q1 2027"}]
+    },
+    "shape-13": {
+      "paragraphs": [{"text": "Q2 2027"}]
+    },
+    "shape-14": {
+      "paragraphs": [{"text": "Control mapping\nThreat modeling\nPython SDK"}]
+    },
+    "shape-15": {
+      "paragraphs": [{"text": "Policy engine\nObservability\nAgent registry"}]
+    },
+    "shape-16": {
+      "paragraphs": [{"text": "GRC portal\nMaturity model\nEnterprise SSO"}]
+    },
+    "shape-17": {
+      "paragraphs": [{"text": "Multi-tenant\n99.9% SLA\nSOC 2 Type II"}]
+    },
+    "shape-18": {
+      "paragraphs": [{"text": "FedRAMP High\nGov cloud\nIL5 ready"}]
+    },
+    "shape-19": {
+      "paragraphs": [{"text": "ISO 42001\nEU AI Act\nGDPR mapping"}]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "paragraphs": [{"text": "Market Opportunity"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "$8.4B AI Security Market by 2028"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "77%"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "$4.2M"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "0"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "45%"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "89%"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "3x"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "of enterprises lack AI security controls"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "average cost of AI-related breach"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "vendors with complete NIST AI RMF crosswalk"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "CAGR in AI governance spending"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "of CISOs prioritize AI security in 2026"}]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "paragraphs": [{"text": "Platform Architecture"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "SDK Layer"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Control Service"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Policy Service"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Python, Go, TypeScript\nLangChain, CrewAI"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "NIST AI RMF → 800-53\nISO 42001 mapping"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": ""}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "Observe Service"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "Threat Service"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "OPA engine\nTool access, data flow"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "STRIDE + ATLAS\nRisk scoring"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "GRC Portal"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "OpenTelemetry\nLLM spans, anomalies"}]
+    },
+    "shape-13": {
+      "paragraphs": [{"text": "Maturity Service"}]
+    },
+    "shape-14": {
+      "paragraphs": [{"text": "Risk workflows\nEvidence collection"}]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "paragraphs": [{"text": "Competitive Landscape"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "AgentGuard is the only platform providing comprehensive AI governance across control mapping, threat modeling, and policy enforcement. Existing vendors focus on narrow slices—content safety, prompt filtering, or basic observability—leaving critical gaps in agent security."}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "LLM Observability"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Content Safety"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Agent Control"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "Compliance"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "Threat Modeling"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "Policy Engine"}]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "paragraphs": [{"text": "Next Steps"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "Evaluate"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Invest"}]
+    },
+    "shape-3": {
+      "paragraphs": [
+        {"text": "Request product demo", "bullet": true, "level": 0},
+        {"text": "Review technical architecture", "bullet": true, "level": 0},
+        {"text": "Schedule security assessment", "bullet": true, "level": 0},
+        {"text": "Meet the founding team", "bullet": true, "level": 0}
+      ]
+    },
+    "shape-4": {
+      "paragraphs": [
+        {"text": "Series A: $15M raising", "bullet": true, "level": 0},
+        {"text": "24-month runway to profitability", "bullet": true, "level": 0},
+        {"text": "Target: 50 enterprise customers", "bullet": true, "level": 0},
+        {"text": "FedRAMP authorization by Q1 2027", "bullet": true, "level": 0}
+      ]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "Contact"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "invest@agentguard.ai | agentguard.ai"}]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "paragraphs": [{"text": "Thank\nyou", "color": "FFFFFF"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": ""}]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "paragraphs": [{"text": "Thank you"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "January 2026"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "© 2026 AgentGuard Inc. All rights reserved. AgentGuard is a trademark of AgentGuard Inc. This presentation contains confidential and proprietary information intended solely for the recipient. Unauthorized distribution, reproduction, or disclosure is strictly prohibited. This document does not constitute an offer to sell or solicitation of an offer to buy any securities."}]
+    }
+  }
+}

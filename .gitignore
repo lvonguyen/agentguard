@@ -1,0 +1,38 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+agentguard
+
+# Test binary
+*.test
+
+# Output
+*.out
+
+# Dependency directories
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config
+.env
+.env.local
+*.local.yaml
+
+# Generated
+go.sum.bak
+
+# Workspace directories
+pptx-workspace/
+scripts/node_modules/

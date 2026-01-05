@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="theme.css"></head>
+<body class="col bg-surface" style="width: 960px; height: 540px; position: relative;">
+  
+  <!-- Orange header bar -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #D04A02;"></div>
+  
+  <!-- Title zone -->
+  <div style="width: 920px; margin: 0 20px; padding-top: 24px;" class="fit">
+    <h1 style="font-family: Calibri, sans-serif; font-size: 28px; color: #2c2c2c; margin: 0; font-weight: bold;">Platform Architecture</h1>
+  </div>
+  
+  <!-- Architecture diagram -->
+  <div class="fill-height col" style="padding: 12px 30px 20px 30px; gap: 12px;">
+    
+    <!-- SDK Layer -->
+    <div style="background: #FAB500; border-radius: 6px; padding: 10px 16px; display: flex; align-items: center; gap: 20px;">
+      <span style="font-size: 12px; color: #2c2c2c; font-weight: bold; min-width: 100px;">SDK Layer</span>
+      <div style="display: flex; gap: 12px; flex: 1;">
+        <span style="background: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #2c2c2c;">Python SDK</span>
+        <span style="background: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #2c2c2c;">Go SDK</span>
+        <span style="background: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #2c2c2c;">TypeScript SDK</span>
+        <span style="background: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #666666;">LangChain • CrewAI • AutoGen</span>
+      </div>
+    </div>
+    
+    <!-- Arrow down -->
+    <div style="text-align: center; color: #D04A02; font-size: 16px;">▼</div>
+    
+    <!-- Core Services row -->
+    <div class="row" style="gap: 12px; flex: 1;">
+      
+      <!-- Control Service -->
+      <div style="flex: 1; background: #f3f3f3; border-radius: 6px; padding: 12px; border-top: 4px solid #D04A02;">
+        <p style="font-size: 11px; color: #D04A02; margin: 0 0 6px 0; font-weight: bold;">Control Service</p>
+        <p style="font-size: 9px; color: #666666; margin: 0; line-height: 1.4;">NIST AI RMF → 800-53 crosswalk</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">ISO 42001 mapping</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Gap analysis engine</p>
+      </div>
+      
+      <!-- Threat Service -->
+      <div style="flex: 1; background: #f3f3f3; border-radius: 6px; padding: 12px; border-top: 4px solid #D94A63;">
+        <p style="font-size: 11px; color: #D94A63; margin: 0 0 6px 0; font-weight: bold;">Threat Service</p>
+        <p style="font-size: 9px; color: #666666; margin: 0; line-height: 1.4;">STRIDE methodology</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">MITRE ATLAS mapping</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Risk scoring</p>
+      </div>
+      
+      <!-- Policy Service -->
+      <div style="flex: 1; background: #f3f3f3; border-radius: 6px; padding: 12px; border-top: 4px solid #EB8C00;">
+        <p style="font-size: 11px; color: #EB8C00; margin: 0 0 6px 0; font-weight: bold;">Policy Service</p>
+        <p style="font-size: 9px; color: #666666; margin: 0; line-height: 1.4;">OPA engine (<1ms)</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Tool access control</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Data flow policies</p>
+      </div>
+      
+      <!-- Observe Service -->
+      <div style="flex: 1; background: #f3f3f3; border-radius: 6px; padding: 12px; border-top: 4px solid #4472C4;">
+        <p style="font-size: 11px; color: #4472C4; margin: 0 0 6px 0; font-weight: bold;">Observe Service</p>
+        <p style="font-size: 9px; color: #666666; margin: 0; line-height: 1.4;">OpenTelemetry traces</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">LLM span types</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Anomaly detection</p>
+      </div>
+      
+      <!-- Maturity Service -->
+      <div style="flex: 1; background: #f3f3f3; border-radius: 6px; padding: 12px; border-top: 4px solid #70AD47;">
+        <p style="font-size: 11px; color: #70AD47; margin: 0 0 6px 0; font-weight: bold;">Maturity Service</p>
+        <p style="font-size: 9px; color: #666666; margin: 0; line-height: 1.4;">5-level assessment</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Industry benchmarks</p>
+        <p style="font-size: 9px; color: #666666; margin: 2px 0 0 0; line-height: 1.4;">Roadmap generation</p>
+      </div>
+      
+    </div>
+    
+    <!-- Arrow down -->
+    <div style="text-align: center; color: #D04A02; font-size: 16px;">▼</div>
+    
+    <!-- Data Layer -->
+    <div style="background: #2c2c2c; border-radius: 6px; padding: 10px 16px; display: flex; align-items: center; gap: 20px;">
+      <span style="font-size: 12px; color: #ffffff; font-weight: bold; min-width: 100px;">Data Layer</span>
+      <div style="display: flex; gap: 12px; flex: 1;">
+        <span style="background: #464646; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #ffffff;">PostgreSQL</span>
+        <span style="background: #464646; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #ffffff;">ClickHouse</span>
+        <span style="background: #464646; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #ffffff;">Redis</span>
+        <span style="background: #464646; padding: 4px 10px; border-radius: 4px; font-size: 10px; color: #999999;">Agent Registry • Control Mappings • Traces</span>
+      </div>
+    </div>
+    
+  </div>
+  
+</body>
+</html>

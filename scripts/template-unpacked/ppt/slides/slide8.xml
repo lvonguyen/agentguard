@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="ascii"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name="Shape 15959"/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15960" name="Google Shape;15960;p2134"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="1708175"/>
+            <a:ext cx="12192000" cy="3432400"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F2F2F2"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr>
+              <a:buClr>
+                <a:srgbClr val="000000"/>
+              </a:buClr>
+              <a:buSzPts val="1100"/>
+            </a:pPr>
+            <a:endParaRPr sz="1467">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15961" name="Google Shape;15961;p2134"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="362300" y="1349975"/>
+            <a:ext cx="2966000" cy="434400"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" anchor="t" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr>
+              <a:buClr>
+                <a:srgbClr val="000000"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="2533" b="1" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Helvetica Neue"/>
+                <a:ea typeface="Helvetica Neue"/>
+                <a:cs typeface="Helvetica Neue"/>
+                <a:sym typeface="Helvetica Neue"/>
+              </a:rPr>
+              <a:t>Learn</a:t>
+            </a:r>
+            <a:endParaRPr sz="2533" b="1" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="accent1"/>
+              </a:solidFill>
+              <a:latin typeface="Helvetica Neue"/>
+              <a:ea typeface="Helvetica Neue"/>
+              <a:cs typeface="Helvetica Neue"/>
+              <a:sym typeface="Helvetica Neue"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15962" name="Google Shape;15962;p2134"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="1925"/>
+            <a:ext cx="2966000" cy="937200"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="EB8C00"/>
+          </a:solidFill>
+          <a:ln w="9525" cap="flat" cmpd="sng">
+            <a:solidFill>
+              <a:schemeClr val="accent4"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:round/>
+            <a:headEnd type="none" w="sm" len="sm"/>
+            <a:tailEnd type="none" w="sm" len="sm"/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="365767" tIns="91433" rIns="91433" bIns="91433" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr>
+              <a:buClr>
+                <a:srgbClr val="000000"/>
+              </a:buClr>
+              <a:buSzPts val="2400"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="3200" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Next Steps</a:t>
+            </a:r>
+            <a:endParaRPr sz="1467" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:cxnSp>
+        <p:nvCxnSpPr>
+          <p:cNvPr id="15963" name="Google Shape;15963;p2134"/>
+          <p:cNvCxnSpPr/>
+          <p:nvPr/>
+        </p:nvCxnSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6090000" y="1404875"/>
+            <a:ext cx="12000" cy="3728800"/>
+          </a:xfrm>
+          <a:prstGeom prst="straightConnector1">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="9525" cap="flat" cmpd="sng">
+            <a:solidFill>
+              <a:schemeClr val="dk2"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:round/>
+            <a:headEnd type="none" w="sm" len="sm"/>
+            <a:tailEnd type="none" w="sm" len="sm"/>
+          </a:ln>
+        </p:spPr>
+      </p:cxnSp>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="15964" name="Google Shape;15964;p2134"/>
+          <p:cNvPicPr preferRelativeResize="0"/>
+          <p:nvPr/>
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId3">
+            <a:alphaModFix/>
+          </a:blip>
+          <a:stretch>
+            <a:fillRect/>
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2965801" y="-3626"/>
+            <a:ext cx="1374348" cy="948299"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15965" name="Google Shape;15965;p2134"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="442925" y="1892725"/>
+            <a:ext cx="5473600" cy="3000000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91433" tIns="91433" rIns="91433" bIns="91433" anchor="t" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Visit the </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId4">
+                  <a:extLst>
+                    <a:ext uri="{A12FA001-AC4F-418D-AE19-62706E023703}">
+                      <ahyp:hlinkClr xmlns:ahyp="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" val="tx"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:hlinkClick>
+              </a:rPr>
+              <a:t>Workbench Guide site</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="dk1"/>
+              </a:solidFill>
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Watch </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="hlink"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId5"/>
+              </a:rPr>
+              <a:t>Workbench How-To Videos</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="dk1"/>
+              </a:solidFill>
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Visit the </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="hlink"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId6"/>
+              </a:rPr>
+              <a:t>Digitizing TMT</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t> microsite </a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="dk1"/>
+              </a:solidFill>
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Watch a full walkthrough of </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="hlink"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId7"/>
+              </a:rPr>
+              <a:t>Workbench basics for TMT</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="dk1"/>
+              </a:solidFill>
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Ask a </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId8">
+                  <a:extLst>
+                    <a:ext uri="{A12FA001-AC4F-418D-AE19-62706E023703}">
+                      <ahyp:hlinkClr xmlns:ahyp="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" val="tx"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:hlinkClick>
+              </a:rPr>
+              <a:t>Digital Accelerator</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="dk1"/>
+              </a:solidFill>
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="1067"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Ask a </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId9">
+                  <a:extLst>
+                    <a:ext uri="{A12FA001-AC4F-418D-AE19-62706E023703}">
+                      <ahyp:hlinkClr xmlns:ahyp="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" val="tx"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:hlinkClick>
+              </a:rPr>
+              <a:t>Digital Lab Champion</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15966" name="Google Shape;15966;p2134"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6402751" y="1349973"/>
+            <a:ext cx="2732000" cy="434400"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" anchor="t" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr>
+              <a:buClr>
+                <a:srgbClr val="000000"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="2533" b="1">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Helvetica Neue"/>
+                <a:ea typeface="Helvetica Neue"/>
+                <a:cs typeface="Helvetica Neue"/>
+                <a:sym typeface="Helvetica Neue"/>
+              </a:rPr>
+              <a:t>Act</a:t>
+            </a:r>
+            <a:endParaRPr sz="2533" b="1">
+              <a:solidFill>
+                <a:schemeClr val="accent1"/>
+              </a:solidFill>
+              <a:latin typeface="Helvetica Neue"/>
+              <a:ea typeface="Helvetica Neue"/>
+              <a:cs typeface="Helvetica Neue"/>
+              <a:sym typeface="Helvetica Neue"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15967" name="Google Shape;15967;p2134"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6402751" y="1892725"/>
+            <a:ext cx="5473600" cy="3000000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91433" tIns="91433" rIns="91433" bIns="91433" anchor="t" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Attend an upcoming </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId10">
+                  <a:extLst>
+                    <a:ext uri="{A12FA001-AC4F-418D-AE19-62706E023703}">
+                      <ahyp:hlinkClr xmlns:ahyp="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" val="tx"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:hlinkClick>
+              </a:rPr>
+              <a:t>TMT Lunch and Learn</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600">
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Join a </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng">
+                <a:solidFill>
+                  <a:schemeClr val="accent1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId11">
+                  <a:extLst>
+                    <a:ext uri="{A12FA001-AC4F-418D-AE19-62706E023703}">
+                      <ahyp:hlinkClr xmlns:ahyp="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" val="tx"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:hlinkClick>
+              </a:rPr>
+              <a:t>Digital Community</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t> for various skills and technologies</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600">
+              <a:solidFill>
+                <a:schemeClr val="dk1"/>
+              </a:solidFill>
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Review your automation performance and goals for FY20 and FY21, respectively </a:t>
+            </a:r>
+            <a:endParaRPr sz="1600">
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="457189" indent="-321725">
+              <a:spcBef>
+                <a:spcPts val="1067"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="1067"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:schemeClr val="dk1"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Georgia"/>
+              <a:buChar char="&#10063;"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Activate and challenge your teams to use new tools and resources like Workbench on engagements </a:t>
+            </a:r>
+            <a:endParaRPr sz="1600">
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15968" name="Google Shape;15968;p2134"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="-100" y="5351300"/>
+            <a:ext cx="12192000" cy="434400"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" anchor="t" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:buClr>
+                <a:srgbClr val="000000"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="2533" b="1">
+                <a:solidFill>
+                  <a:srgbClr val="D04A02"/>
+                </a:solidFill>
+                <a:latin typeface="Helvetica Neue"/>
+                <a:ea typeface="Helvetica Neue"/>
+                <a:cs typeface="Helvetica Neue"/>
+                <a:sym typeface="Helvetica Neue"/>
+              </a:rPr>
+              <a:t>Connect</a:t>
+            </a:r>
+            <a:endParaRPr sz="2533" b="1">
+              <a:solidFill>
+                <a:srgbClr val="D04A02"/>
+              </a:solidFill>
+              <a:latin typeface="Helvetica Neue"/>
+              <a:ea typeface="Helvetica Neue"/>
+              <a:cs typeface="Helvetica Neue"/>
+              <a:sym typeface="Helvetica Neue"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15969" name="Google Shape;15969;p2134"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="5633300"/>
+            <a:ext cx="12192000" cy="721200"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91433" tIns="91433" rIns="91433" bIns="91433" anchor="t" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:spcAft>
+                <a:spcPts val="1067"/>
+              </a:spcAft>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t>Still not finding the answers to your questions? </a:t>
+            </a:r>
+            <a:br>
+              <a:rPr lang="en" sz="1600">
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+            </a:br>
+            <a:r>
+              <a:rPr lang="en" sz="1600" u="sng">
+                <a:solidFill>
+                  <a:srgbClr val="D04A02"/>
+                </a:solidFill>
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+                <a:hlinkClick r:id="rId12">
+                  <a:extLst>
+                    <a:ext uri="{A12FA001-AC4F-418D-AE19-62706E023703}">
+                      <ahyp:hlinkClr xmlns:ahyp="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" val="tx"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:hlinkClick>
+              </a:rPr>
+              <a:t>Reach out to TMT&#8217;s dedicated Digital Automation Team</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en" sz="1600">
+                <a:latin typeface="Georgia"/>
+                <a:ea typeface="Georgia"/>
+                <a:cs typeface="Georgia"/>
+                <a:sym typeface="Georgia"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:endParaRPr sz="1600">
+              <a:latin typeface="Georgia"/>
+              <a:ea typeface="Georgia"/>
+              <a:cs typeface="Georgia"/>
+              <a:sym typeface="Georgia"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>

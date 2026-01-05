@@ -1,0 +1,404 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "AgentGuard\n\nAI Security Governance Platform",
+          "font_size": 38.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "Series A Investment Opportunity • January 2026",
+          "font_name": "Georgia",
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "Platform Capabilities"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "Control Mapping"
+        }
+      ]
+    },
+    "shape-2": {
+      "paragraphs": [
+        {
+          "text": "Threat Modeling"
+        }
+      ]
+    },
+    "shape-3": {
+      "paragraphs": [
+        {
+          "text": "Policy Engine"
+        }
+      ]
+    },
+    "shape-4": {
+      "paragraphs": [
+        {
+          "text": "Observability"
+        }
+      ]
+    },
+    "shape-5": {
+      "paragraphs": [
+        {
+          "text": "NIST AI RMF → 800-53 crosswalk with automated gap analysis"
+        }
+      ]
+    },
+    "shape-6": {
+      "paragraphs": [
+        {
+          "text": "STRIDE + MITRE ATLAS for agent-specific threat identification"
+        }
+      ]
+    },
+    "shape-7": {
+      "paragraphs": [
+        {
+          "text": "OPA-based sub-ms policy enforcement for tool access control"
+        }
+      ]
+    },
+    "shape-8": {
+      "paragraphs": [
+        {
+          "text": "OpenTelemetry traces with LLM-specific span types"
+        }
+      ]
+    },
+    "shape-9": {
+      "paragraphs": [
+        {
+          "text": "Maturity Model"
+        }
+      ]
+    },
+    "shape-10": {
+      "paragraphs": [
+        {
+          "text": "Agent Registry"
+        }
+      ]
+    },
+    "shape-11": {
+      "paragraphs": [
+        {
+          "text": "SDK Integration"
+        }
+      ]
+    },
+    "shape-12": {
+      "paragraphs": [
+        {
+          "text": "GRC Portal"
+        }
+      ]
+    },
+    "shape-13": {
+      "paragraphs": [
+        {
+          "text": "5-level AI security maturity with benchmarking"
+        }
+      ]
+    },
+    "shape-14": {
+      "paragraphs": [
+        {
+          "text": "Centralized inventory of agents, capabilities, and owners"
+        }
+      ]
+    },
+    "shape-15": {
+      "paragraphs": [
+        {
+          "text": "Python, Go, TypeScript SDKs for framework integration"
+        }
+      ]
+    },
+    "shape-16": {
+      "paragraphs": [
+        {
+          "text": "Risk acceptance workflows and audit evidence collection"
+        }
+      ]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "Product Roadmap"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "Enter your subhead line here"
+        }
+      ]
+    },
+    "shape-2": {
+      "paragraphs": [
+        {
+          "text": "Foundation"
+        }
+      ]
+    },
+    "shape-3": {
+      "paragraphs": [
+        {
+          "text": "Core Platform"
+        }
+      ]
+    },
+    "shape-4": {
+      "paragraphs": [
+        {
+          "text": "Enterprise"
+        }
+      ]
+    },
+    "shape-5": {
+      "paragraphs": [
+        {
+          "text": "Q1 2026"
+        }
+      ]
+    },
+    "shape-6": {
+      "paragraphs": [
+        {
+          "text": "Q2 2026"
+        }
+      ]
+    },
+    "shape-7": {
+      "paragraphs": [
+        {
+          "text": "Q3 2026"
+        }
+      ]
+    },
+    "shape-8": {
+      "paragraphs": [
+        {
+          "text": "Scale"
+        }
+      ]
+    },
+    "shape-9": {
+      "paragraphs": [
+        {
+          "text": "FedRAMP"
+        }
+      ]
+    },
+    "shape-10": {
+      "paragraphs": [
+        {
+          "text": "Global"
+        }
+      ]
+    },
+    "shape-11": {
+      "paragraphs": [
+        {
+          "text": "Q4 2026"
+        }
+      ]
+    },
+    "shape-12": {
+      "paragraphs": [
+        {
+          "text": "Q1 2027"
+        }
+      ]
+    },
+    "shape-13": {
+      "paragraphs": [
+        {
+          "text": "Q2 2027"
+        }
+      ]
+    },
+    "shape-14": {
+      "paragraphs": [
+        {
+          "text": "Control mapping, threat model, SDK"
+        }
+      ]
+    },
+    "shape-15": {
+      "paragraphs": [
+        {
+          "text": "Policy engine, observability, registry"
+        }
+      ]
+    },
+    "shape-16": {
+      "paragraphs": [
+        {
+          "text": "GRC portal, maturity model, SSO"
+        }
+      ]
+    },
+    "shape-17": {
+      "paragraphs": [
+        {
+          "text": "Multi-tenant, 99.9% SLA, SOC 2"
+        }
+      ]
+    },
+    "shape-18": {
+      "paragraphs": [
+        {
+          "text": "FedRAMP High authorization"
+        }
+      ]
+    },
+    "shape-19": {
+      "paragraphs": [
+        {
+          "text": "ISO 42001, EU AI Act mapping"
+        }
+      ]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "Next Steps"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "Evaluate"
+        }
+      ]
+    },
+    "shape-2": {
+      "paragraphs": [
+        {
+          "text": "Pilot"
+        }
+      ]
+    },
+    "shape-3": {
+      "paragraphs": [
+        {
+          "text": "Request product demo",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "Review technical documentation",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "Schedule architecture review",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "Assess current AI agent inventory",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    },
+    "shape-4": {
+      "paragraphs": [
+        {
+          "text": "Deploy SDK in sandbox environment",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "Run threat model on 2-3 agents",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "Test policy enforcement rules",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "Validate observability integration",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    },
+    "shape-5": {
+      "paragraphs": [
+        {
+          "text": "Partner"
+        }
+      ]
+    },
+    "shape-6": {
+      "paragraphs": [
+        {
+          "text": "Contact: invest@agentguard.ai"
+        }
+      ]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "Thank\nyou",
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "Thank you"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "January 2026"
+        }
+      ]
+    },
+    "shape-2": {
+      "paragraphs": [
+        {
+          "text": "© 2026 AgentGuard. All rights reserved. AgentGuard is a registered trademark. This presentation contains confidential and proprietary information. Distribution or reproduction without written permission is prohibited."
+        }
+      ]
+    }
+  }
+}

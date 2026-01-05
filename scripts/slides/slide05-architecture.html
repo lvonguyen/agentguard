@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="pitch-theme.css"></head>
+<body class="col bg-surface" style="width: 960px; height: 540px; position: relative;">
+  
+  <!-- Top accent -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #00d4aa;"></div>
+  
+  <!-- Title zone -->
+  <div style="width: 880px; margin: 0 40px; padding-top: 24px;" class="fit">
+    <h1 style="font-family: Georgia, serif; font-size: 36px; color: #e6edf3; margin: 0;">
+      Platform Architecture
+    </h1>
+  </div>
+  
+  <!-- Content zone - Architecture diagram -->
+  <div class="fill-height col" style="padding: 12px 40px 20px 40px; gap: 16px;">
+    
+    <!-- Top row: Data Sources -->
+    <div class="row" style="gap: 12px; justify-content: center;">
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 10px 16px; text-align: center;">
+        <p style="font-size: 11px; color: #8b949e; margin: 0;">LangChain</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 10px 16px; text-align: center;">
+        <p style="font-size: 11px; color: #8b949e; margin: 0;">LlamaIndex</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 10px 16px; text-align: center;">
+        <p style="font-size: 11px; color: #8b949e; margin: 0;">CrewAI</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 10px 16px; text-align: center;">
+        <p style="font-size: 11px; color: #8b949e; margin: 0;">AutoGen</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 10px 16px; text-align: center;">
+        <p style="font-size: 11px; color: #8b949e; margin: 0;">Custom Agents</p>
+      </div>
+    </div>
+    
+    <!-- Arrow down -->
+    <div style="text-align: center;">
+      <span style="font-size: 20px; color: #30363d;">▼</span>
+    </div>
+    
+    <!-- SDK Layer -->
+    <div style="background: linear-gradient(90deg, rgba(0, 212, 170, 0.1) 0%, rgba(31, 111, 235, 0.1) 100%); border: 1px solid #00d4aa; border-radius: 8px; padding: 12px 20px; text-align: center;">
+      <p style="font-size: 13px; color: #00d4aa; margin: 0; font-weight: 600;">AgentGuard SDK</p>
+      <p style="font-size: 10px; color: #8b949e; margin: 4px 0 0 0;">Python • Go • TypeScript — OpenTelemetry Instrumentation + Policy Hooks</p>
+    </div>
+    
+    <!-- Arrow down -->
+    <div style="text-align: center;">
+      <span style="font-size: 20px; color: #30363d;">▼</span>
+    </div>
+    
+    <!-- Core Platform - 5 services -->
+    <div class="row" style="gap: 8px;">
+      
+      <div style="flex: 1; background: #161b22; border-radius: 6px; padding: 12px; border-top: 3px solid #00d4aa;">
+        <p style="font-size: 11px; color: #00d4aa; margin: 0 0 6px 0; font-weight: 600;">Control Service</p>
+        <p style="font-size: 9px; color: #8b949e; margin: 0; line-height: 1.4;">NIST AI RMF<br/>800-53 Crosswalk<br/>Gap Analysis</p>
+      </div>
+      
+      <div style="flex: 1; background: #161b22; border-radius: 6px; padding: 12px; border-top: 3px solid #1f6feb;">
+        <p style="font-size: 11px; color: #1f6feb; margin: 0 0 6px 0; font-weight: 600;">Observe Service</p>
+        <p style="font-size: 9px; color: #8b949e; margin: 0; line-height: 1.4;">Agent Traces<br/>Security Signals<br/>Anomaly Detection</p>
+      </div>
+      
+      <div style="flex: 1; background: #161b22; border-radius: 6px; padding: 12px; border-top: 3px solid #a371f7;">
+        <p style="font-size: 11px; color: #a371f7; margin: 0 0 6px 0; font-weight: 600;">Policy Service</p>
+        <p style="font-size: 9px; color: #8b949e; margin: 0; line-height: 1.4;">OPA Engine<br/>Tool Access<br/>Data Flow Gates</p>
+      </div>
+      
+      <div style="flex: 1; background: #161b22; border-radius: 6px; padding: 12px; border-top: 3px solid #f0883e;">
+        <p style="font-size: 11px; color: #f0883e; margin: 0 0 6px 0; font-weight: 600;">Threat Service</p>
+        <p style="font-size: 9px; color: #8b949e; margin: 0; line-height: 1.4;">MITRE ATLAS<br/>STRIDE Analysis<br/>Risk Scoring</p>
+      </div>
+      
+      <div style="flex: 1; background: #161b22; border-radius: 6px; padding: 12px; border-top: 3px solid #f85149;">
+        <p style="font-size: 11px; color: #f85149; margin: 0 0 6px 0; font-weight: 600;">Maturity Service</p>
+        <p style="font-size: 9px; color: #8b949e; margin: 0; line-height: 1.4;">Posture Scoring<br/>Benchmarks<br/>Roadmaps</p>
+      </div>
+      
+    </div>
+    
+    <!-- Arrow down -->
+    <div style="text-align: center;">
+      <span style="font-size: 20px; color: #30363d;">▼</span>
+    </div>
+    
+    <!-- Data Layer -->
+    <div class="row" style="gap: 12px; justify-content: center;">
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 8px 16px;">
+        <p style="font-size: 10px; color: #8b949e; margin: 0;">PostgreSQL</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 8px 16px;">
+        <p style="font-size: 10px; color: #8b949e; margin: 0;">ClickHouse</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 8px 16px;">
+        <p style="font-size: 10px; color: #8b949e; margin: 0;">Redis</p>
+      </div>
+      <div style="background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 8px 16px;">
+        <p style="font-size: 10px; color: #8b949e; margin: 0;">OPA Bundles</p>
+      </div>
+    </div>
+    
+  </div>
+  
+</body>
+</html>

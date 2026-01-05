@@ -1,0 +1,2184 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "left": 0.48,
+      "top": 0.47,
+      "width": 7.25,
+      "height": 2.5,
+      "placeholder_type": "CENTER_TITLE",
+      "paragraphs": [
+        {
+          "text": "Solution Design Overview\u000b\u000bEnterprise Virtual Desktop",
+          "font_size": 38.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.48,
+      "top": 4.1,
+      "width": 5.99,
+      "height": 0.65,
+      "placeholder_type": "SUBTITLE",
+      "paragraphs": [
+        {
+          "text": "April 2025",
+          "font_name": "Georgia",
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "left": 0.0,
+      "top": 0.0,
+      "width": 3.66,
+      "height": 7.5,
+      "placeholder_type": "TITLE",
+      "paragraphs": [
+        {
+          "text": "Features"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 3.78,
+      "top": 0.87,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-5": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.18,
+      "top": 0.87,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-6": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.58,
+      "top": 0.87,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-7": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 10.97,
+      "top": 0.87,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-8": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 3.78,
+      "top": 2.02,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 6.18,
+      "top": 2.02,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 8.58,
+      "top": 2.02,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 10.97,
+      "top": 2.02,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-4": 0.39
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 3.78,
+      "top": 4.29,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-13": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 6.18,
+      "top": 4.29,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-14": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 8.58,
+      "top": 4.29,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-15": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 10.97,
+      "top": 4.29,
+      "width": 2.18,
+      "height": 1.33,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-16": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Feature"
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 3.78,
+      "top": 5.43,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-9": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 6.18,
+      "top": 5.43,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-10": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-15": {
+      "left": 8.58,
+      "top": 5.43,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-11": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    },
+    "shape-16": {
+      "left": 10.97,
+      "top": 5.43,
+      "width": 2.18,
+      "height": 1.93,
+      "placeholder_type": "BODY",
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-12": 0.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Replace this text with your own."
+        }
+      ]
+    }
+  },
+  "slide-2": {
+    "shape-0": {
+      "left": 0.48,
+      "top": 0.47,
+      "width": 12.36,
+      "height": 0.55,
+      "placeholder_type": "TITLE",
+      "default_font_size": 32.0,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.16
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 0.26,
+          "shape-2": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Basis for communication moments per stakeholder group*"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.85,
+      "top": 0.9,
+      "width": 2.18,
+      "height": 0.35,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-0": 0.26
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "General Da Vinci information",
+          "font_size": 10.67
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.4,
+      "top": 0.88,
+      "width": 2.51,
+      "height": 0.35,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-0": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Da Vinci tool information",
+          "font_size": 10.67
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.57,
+      "top": 1.39,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channels:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "email with explanatory video and links to Da Vinci end-user website and Intranet",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "announcement and change impact",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 2.73,
+      "top": 1.39,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channels:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "email with one-pager and links to Da Vinci end-user website and Intranet",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "announcement and deepdive",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 4.58,
+      "top": 1.39,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channels:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "webcast",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "general, change impact, go-live dates",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 7.68,
+      "top": 1.39,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channel:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Go-live email with one-pager and links to Da Vinci end-user website and Intranet",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Go-live, reminder, to take action, to follow the training",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 9.55,
+      "top": 1.39,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channel: \u000bemail",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics: \u000bgo-live date, action, update",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 10.88,
+      "top": 3.23,
+      "width": 1.75,
+      "height": 0.35,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Go-live event!",
+          "font_size": 13.33,
+          "bold": true
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 1.25,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "1",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 2.4,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 3.47,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "3",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 5.1,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "4",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 5.92,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "5",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 6.6,
+      "top": 3.74,
+      "width": 4.03,
+      "height": 0.5,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-15": 0.15,
+          "shape-16": 0.15,
+          "shape-17": 0.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Stakeholders follow the training",
+          "font_size": 9.33,
+          "italic": true
+        }
+      ]
+    },
+    "shape-15": {
+      "left": 7.64,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-14": 0.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "6",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-16": {
+      "left": 8.48,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-14": 0.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "7",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-17": {
+      "left": 9.9,
+      "top": 3.94,
+      "width": 0.49,
+      "height": 0.5,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-14": 0.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "8",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-18": {
+      "left": 12.27,
+      "top": 3.9,
+      "width": 1.04,
+      "height": 0.67,
+      "paragraphs": [
+        {
+          "text": "TBC: post",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true
+        },
+        {
+          "text": "go-live comms",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true
+        }
+      ]
+    },
+    "shape-19": {
+      "left": 10.69,
+      "top": 4.8,
+      "width": 1.94,
+      "height": 0.35,
+      "paragraphs": [
+        {
+          "text": "And launch of Da Vinci Desk",
+          "font_size": 9.33
+        }
+      ]
+    },
+    "shape-20": {
+      "left": 1.79,
+      "top": 5.52,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channel: Posters/banners/screens/screensaver",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Announcement, change impact,",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "go-live dates",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-21": {
+      "left": 5.31,
+      "top": 5.52,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channel:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "email with one-pager and links to Da Vinci end-user website and Intranet",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "take action, migration dates and trainings to follow",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-22": {
+      "left": 7.14,
+      "top": 5.52,
+      "width": 1.73,
+      "height": 1.47,
+      "paragraphs": [
+        {
+          "text": "Channels:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "newsletter with important Da Vinci related updates",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Topics:",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "bold": true,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "update",
+          "alignment": "CENTER",
+          "font_size": 9.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-23": {
+      "left": 1.42,
+      "top": 6.97,
+      "width": 11.37,
+      "height": 0.7,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "*Please not that not every point (1 until 8) will be used in communication to the different stakeholder groups. Please also note that communication towards the Leadership, \u000bChange Agent Network and the IT department are done separately (as mentioned on slide 11). For these groups we therefore did not create specific communication moments.",
+          "font_size": 9.33,
+          "italic": true
+        }
+      ]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "left": 0.57,
+      "top": 0.41,
+      "width": 12.2,
+      "height": 0.6,
+      "placeholder_type": "TITLE",
+      "default_font_size": 34.67,
+      "paragraphs": [
+        {
+          "text": "Roadmap Infographics",
+          "font_name": "Georgia",
+          "font_size": 37.33,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.57,
+      "top": 1.07,
+      "width": 12.2,
+      "height": 0.25,
+      "placeholder_type": "BODY",
+      "default_font_size": 14.67,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Enter your subhead line here",
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.43,
+      "top": 1.54,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.47,
+      "top": 1.54,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_2"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 9.52,
+      "top": 1.54,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_3"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 1.74,
+      "top": 2.01,
+      "width": 1.74,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2015",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 5.78,
+      "top": 2.01,
+      "width": 1.75,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2016",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 9.82,
+      "top": 2.01,
+      "width": 1.74,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2017",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 1.26,
+      "top": 3.44,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_6"
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 1.57,
+      "top": 3.92,
+      "width": 1.74,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2018",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 4.56,
+      "top": 3.44,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_5"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 4.86,
+      "top": 3.92,
+      "width": 1.75,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2019",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 8.87,
+      "top": 3.44,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_4"
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 9.18,
+      "top": 3.92,
+      "width": 1.75,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2020",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 2.71,
+      "top": 5.34,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_1"
+        }
+      ]
+    },
+    "shape-15": {
+      "left": 3.01,
+      "top": 5.81,
+      "width": 1.75,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2021",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-16": {
+      "left": 6.88,
+      "top": 5.34,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_6"
+        }
+      ]
+    },
+    "shape-17": {
+      "left": 7.18,
+      "top": 5.81,
+      "width": 1.74,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2022",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    },
+    "shape-18": {
+      "left": 9.99,
+      "top": 5.34,
+      "width": 2.35,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "theme_color": "ACCENT_3"
+        }
+      ]
+    },
+    "shape-19": {
+      "left": 10.29,
+      "top": 5.81,
+      "width": 1.75,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "2023",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "5B5B5B"
+        }
+      ]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "left": 0.57,
+      "top": 0.41,
+      "width": 12.2,
+      "height": 0.6,
+      "placeholder_type": "TITLE",
+      "default_font_size": 34.67,
+      "paragraphs": [
+        {
+          "text": "Roadmap Infographics"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.57,
+      "top": 1.07,
+      "width": 12.2,
+      "height": 0.25,
+      "placeholder_type": "BODY",
+      "default_font_size": 14.67,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Enter your subhead line here"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.11,
+      "top": 1.52,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 4.09,
+      "top": 1.52,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_2"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 7.06,
+      "top": 1.52,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_3"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 10.15,
+      "top": 1.52,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_4"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 1.68,
+      "top": 3.39,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_5"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 5.66,
+      "top": 3.39,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_6"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 9.65,
+      "top": 3.39,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_1"
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 1.2,
+      "top": 5.26,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_2"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 4.09,
+      "top": 5.26,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_3"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 7.06,
+      "top": 5.26,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_4"
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 10.14,
+      "top": 5.26,
+      "width": 2.0,
+      "height": 0.25,
+      "paragraphs": [
+        {
+          "text": "Element Title Here",
+          "alignment": "CENTER",
+          "font_name": "Arial",
+          "font_size": 14.67,
+          "bold": true,
+          "theme_color": "ACCENT_5"
+        }
+      ]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "left": 0.36,
+      "top": 0.35,
+      "width": 9.28,
+      "height": 1.14,
+      "placeholder_type": "TITLE",
+      "default_font_size": 32.0,
+      "paragraphs": [
+        {
+          "text": "Roadmap Arrow Concept",
+          "font_size": 14.67,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.07,
+      "top": 6.38,
+      "width": 1.59,
+      "height": 0.91,
+      "paragraphs": [
+        {
+          "text": "Digital Start",
+          "alignment": "RIGHT",
+          "font_size": 24.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.76,
+      "top": 6.88,
+      "width": 3.17,
+      "height": 0.37,
+      "paragraphs": [
+        {
+          "text": "Data capture",
+          "font_size": 16.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 7.67,
+      "top": 7.76,
+      "width": 3.17,
+      "height": 0.37,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 0.63
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Execution/Analysis",
+          "font_size": 16.0,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 9.76,
+      "top": 7.43,
+      "width": 3.17,
+      "height": 0.3,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 0.24
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Data Platform, 3rd Party data, Save It",
+          "font_size": 12.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.67,
+      "top": 8.31,
+      "width": 3.44,
+      "height": 0.71,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.52
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Common Data Model, Digital Lab, Excel/O365, Business accelerators,Power ΒΙ/Tableau",
+          "font_name": "Helvetica Neue",
+          "font_size": 12.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 3.21,
+      "top": 9.05,
+      "width": 0.57,
+      "height": 0.57,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 2.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "*",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "262626"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 4.83,
+      "top": 9.04,
+      "width": 3.98,
+      "height": 0.37,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.91
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Connected project management",
+          "font_size": 16.0,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 13.22,
+      "top": 9.1,
+      "width": 3.05,
+      "height": 0.37,
+      "overflow": {
+        "slide": {
+          "overflow_right": 2.94,
+          "overflow_bottom": 1.97
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Client delivery",
+          "font_size": 16.0,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 4.83,
+      "top": 9.67,
+      "width": 3.17,
+      "height": 0.77,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 2.94
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Concourse, Admin/Rapid Engage",
+          "font_name": "Helvetica Neue",
+          "font_size": 12.0,
+          "color": "434343"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 13.22,
+      "top": 9.66,
+      "width": 3.05,
+      "height": 0.3,
+      "overflow": {
+        "slide": {
+          "overflow_right": 2.94,
+          "overflow_bottom": 2.46
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Junction, workbench",
+          "font_size": 12.0,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 10.95,
+      "top": 10.32,
+      "width": 3.44,
+      "height": 0.37,
+      "overflow": {
+        "slide": {
+          "overflow_right": 1.06,
+          "overflow_bottom": 3.19
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Enhanced Internal Collaboration",
+          "font_size": 16.0,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 10.95,
+      "top": 10.88,
+      "width": 2.29,
+      "height": 0.3,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 3.68
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Microsoft Teams/ O365",
+          "font_size": 12.0,
+          "theme_color": "LIGHT_1"
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 8.2,
+      "top": 11.64,
+      "width": 3.49,
+      "height": 0.37,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 4.51
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Sales & scoping",
+          "font_size": 16.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 8.2,
+      "top": 12.11,
+      "width": 3.23,
+      "height": 0.98,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 5.58
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Salesforce, Deals Source, Deals Sales Accelerator",
+          "font_name": "Helvetica Neue",
+          "font_size": 12.0,
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "left": 0.48,
+      "top": 0.47,
+      "width": 12.36,
+      "height": 0.75,
+      "placeholder_type": "TITLE",
+      "paragraphs": [
+        {
+          "text": "Editorial Summary"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.15,
+      "top": 1.63,
+      "width": 5.57,
+      "height": 4.45,
+      "placeholder_type": "BODY",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "A leadership perspective series of economic, societal, business insight - brought together to provide the most trusted and respected ‘go to’ source globally.",
+          "bullet": true,
+          "level": 0,
+          "font_size": 17.33
+        },
+        {
+          "text": "We’re taking a clear stance and position on the issues that matter most to our clients - framed within 6 critical disruptive forces themes.",
+          "bullet": true,
+          "level": 0,
+          "font_size": 17.33,
+          "color": "000000"
+        },
+        {
+          "text": "Authored by key PwC leaders and SMEs with the objective to further their profiles.",
+          "bullet": true,
+          "level": 0,
+          "font_size": 17.33
+        },
+        {
+          "text": "Read a summary of each article and find related assets on our Google site page",
+          "bullet": true,
+          "level": 0,
+          "font_size": 17.33
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.25,
+      "top": 1.5,
+      "width": 2.83,
+      "height": 0.53,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.25
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Reporting and Trust",
+          "font_size": 14.67
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.61,
+      "top": 1.5,
+      "width": 2.83,
+      "height": 0.53,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.25,
+          "shape-4": 0.29
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Workforce & Skills",
+          "font_size": 14.67
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 10.9,
+      "top": 1.5,
+      "width": 1.88,
+      "height": 0.53,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.29
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Climate Change",
+          "font_size": 14.67
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 6.25,
+      "top": 4.4,
+      "width": 2.76,
+      "height": 0.58,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-6": 0.23
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Fractured World",
+          "font_size": 14.67
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 8.61,
+      "top": 4.4,
+      "width": 2.53,
+      "height": 0.91,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-5": 0.23,
+          "shape-7": 0.14
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Digital Disruption",
+          "font_size": 14.67
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 10.9,
+      "top": 4.4,
+      "width": 2.26,
+      "height": 0.58,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-6": 0.14
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Inequality and Inclusion",
+          "font_size": 14.67
+        }
+      ]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "left": 0.0,
+      "top": 0.0,
+      "width": 3.24,
+      "height": 1.02,
+      "paragraphs": [
+        {
+          "text": "Next Steps",
+          "font_name": "Georgia",
+          "font_size": 32.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.4,
+      "top": 1.48,
+      "width": 3.24,
+      "height": 0.48,
+      "paragraphs": [
+        {
+          "text": "Learn",
+          "font_name": "Helvetica Neue",
+          "font_size": 25.33,
+          "bold": true,
+          "theme_color": "ACCENT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.0,
+      "top": 1.48,
+      "width": 2.99,
+      "height": 0.48,
+      "paragraphs": [
+        {
+          "text": "Act",
+          "font_name": "Helvetica Neue",
+          "font_size": 25.33,
+          "bold": true,
+          "theme_color": "ACCENT_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.48,
+      "top": 2.07,
+      "width": 5.99,
+      "height": 3.28,
+      "paragraphs": [
+        {
+          "text": "Visit the Workbench Guide site",
+          "bullet": true,
+          "level": 0,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Watch Workbench How-To Videos",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Visit the Digitizing TMT microsite",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Watch a full walkthrough of Workbench basics for TMT",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Ask a Digital Accelerator",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Ask a Digital Lab Champion",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "space_after": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 7.0,
+      "top": 2.07,
+      "width": 5.99,
+      "height": 3.28,
+      "paragraphs": [
+        {
+          "text": "Attend an upcoming TMT Lunch and Learn",
+          "bullet": true,
+          "level": 0,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Join a Digital Community for various skills and technologies",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0,
+          "theme_color": "DARK_1"
+        },
+        {
+          "text": "Review your automation performance and goals for FY20 and FY21, respectively",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0
+        },
+        {
+          "text": "Activate and challenge your teams to use new tools and resources like Workbench on engagements",
+          "bullet": true,
+          "level": 0,
+          "space_before": 10.67,
+          "space_after": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0
+        }
+      ]
+    },
+    "shape-5": {
+      "left": -0.0,
+      "top": 5.85,
+      "width": 13.33,
+      "height": 0.48,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-6": 2.27
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Connect",
+          "alignment": "CENTER",
+          "font_name": "Helvetica Neue",
+          "font_size": 25.33,
+          "bold": true,
+          "color": "D04A02"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 0.0,
+      "top": 6.16,
+      "width": 13.33,
+      "height": 0.79,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-5": 2.27
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Still not finding the answers to your questions? \u000bReach out to TMT’s dedicated Digital Automation Team",
+          "alignment": "CENTER",
+          "space_after": 10.67,
+          "font_name": "Georgia",
+          "font_size": 16.0
+        }
+      ]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "left": 1.11,
+      "top": 3.92,
+      "width": 2.6,
+      "height": 1.1,
+      "paragraphs": [
+        {
+          "text": "Thank",
+          "alignment": "CENTER",
+          "font_name": "Georgia",
+          "font_size": 48.0,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 2.54,
+      "top": 4.98,
+      "width": 1.8,
+      "height": 1.1,
+      "paragraphs": [
+        {
+          "text": "you",
+          "alignment": "CENTER",
+          "font_name": "Georgia",
+          "font_size": 48.0,
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "left": 0.48,
+      "top": 2.42,
+      "width": 5.23,
+      "height": 2.42,
+      "placeholder_type": "CENTER_TITLE",
+      "paragraphs": [
+        {
+          "text": "Thank you",
+          "font_size": 80.0,
+          "line_spacing": 80.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.48,
+      "top": 5.39,
+      "width": 1.98,
+      "height": 0.22,
+      "placeholder_type": "BODY",
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.07
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "April 2023",
+          "font_size": 13.33,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.48,
+      "top": 5.75,
+      "width": 7.03,
+      "height": 1.1,
+      "paragraphs": [
+        {
+          "text": "© 2023 PwC. All rights reserved. PwC refers to the US member firm or one of its subsidiaries or affiliates, and may sometimes refer to the PwC network. Each member firm is a separate legal entity. Please see www.pwc.com/structure for further details. This proposal is protected under the copyright laws of the United States and other countries. This proposal contains information that is proprietary and confidential to PricewaterhouseCoopers LLP, and shall not be disclosed outside the recipient's company or duplicated, used or disclosed, in whole or in part, by the recipient for any purpose other than to evaluate this proposal. Any other use or disclosure, in whole or in part, of this information without the express written permission of PricewaterhouseCoopers LLP is prohibited.",
+          "font_name": "Arial",
+          "font_size": 9.33,
+          "color": "000000"
+        }
+      ]
+    }
+  }
+}
