@@ -1,0 +1,302 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "paragraphs": [
+        {
+          "text": "AgentGuard\n\nAI Security Governance",
+          "font_size": 38.0,
+          "bold": true,
+          "color": "FFFFFF"
+        }
+      ]
+    },
+    "shape-1": {
+      "paragraphs": [
+        {
+          "text": "Series A • January 2026",
+          "font_name": "Georgia",
+          "color": "FFFFFF"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "paragraphs": [{"text": "Platform"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "Control Mapping"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Threat Modeling"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Policy Engine"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Observability"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "NIST AI RMF to 800-53 crosswalk"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "STRIDE + MITRE ATLAS analysis"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "OPA-based tool access control"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "OpenTelemetry LLM traces"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "Maturity Model"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "Agent Registry"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "SDK Integration"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "GRC Portal"}]
+    },
+    "shape-13": {
+      "paragraphs": [{"text": "5-level security assessment"}]
+    },
+    "shape-14": {
+      "paragraphs": [{"text": "Centralized agent inventory"}]
+    },
+    "shape-15": {
+      "paragraphs": [{"text": "Python, Go, TypeScript SDKs"}]
+    },
+    "shape-16": {
+      "paragraphs": [{"text": "Risk workflows, audit trails"}]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "paragraphs": [{"text": "Roadmap"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "36-Month Path to Leadership"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "MVP"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Core"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Enterprise"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "Q1 '26"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "Q2 '26"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "Q3 '26"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "Scale"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "Fed"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "Global"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "Q4 '26"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "Q1 '27"}]
+    },
+    "shape-13": {
+      "paragraphs": [{"text": "Q2 '27"}]
+    },
+    "shape-14": {
+      "paragraphs": [{"text": "SDK, threat model"}]
+    },
+    "shape-15": {
+      "paragraphs": [{"text": "Policy, observe"}]
+    },
+    "shape-16": {
+      "paragraphs": [{"text": "GRC, SSO"}]
+    },
+    "shape-17": {
+      "paragraphs": [{"text": "Multi-tenant"}]
+    },
+    "shape-18": {
+      "paragraphs": [{"text": "FedRAMP"}]
+    },
+    "shape-19": {
+      "paragraphs": [{"text": "ISO 42001"}]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "paragraphs": [{"text": "Market"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "$8.4B AI Security by 2028"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "77%"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "$4.2M"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "0"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "45%"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "89%"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "3x"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "no AI controls"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "breach cost"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "crosswalks"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "CAGR"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "CISO priority"}]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "paragraphs": [{"text": "Architecture"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "SDK"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Controls"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Policy"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Py, Go, TS"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "NIST mapping"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": ""}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "Observe"}]
+    },
+    "shape-8": {
+      "paragraphs": [{"text": "Threat"}]
+    },
+    "shape-9": {
+      "paragraphs": [{"text": "OPA engine"}]
+    },
+    "shape-10": {
+      "paragraphs": [{"text": "ATLAS risks"}]
+    },
+    "shape-11": {
+      "paragraphs": [{"text": "Portal"}]
+    },
+    "shape-12": {
+      "paragraphs": [{"text": "OTEL traces"}]
+    },
+    "shape-13": {
+      "paragraphs": [{"text": "Maturity"}]
+    },
+    "shape-14": {
+      "paragraphs": [{"text": "GRC"}]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "paragraphs": [{"text": "Competition"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "AgentGuard provides comprehensive AI governance. Existing vendors focus on narrow slices—content safety or basic observability—leaving critical gaps."}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Observability"}]
+    },
+    "shape-3": {
+      "paragraphs": [{"text": "Content Safety"}]
+    },
+    "shape-4": {
+      "paragraphs": [{"text": "Agent Control"}]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "Compliance"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "Threat Model"}]
+    },
+    "shape-7": {
+      "paragraphs": [{"text": "Policy Engine"}]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "paragraphs": [{"text": "Next Steps"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "Evaluate"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "Invest"}]
+    },
+    "shape-3": {
+      "paragraphs": [
+        {"text": "Request product demo", "bullet": true, "level": 0},
+        {"text": "Review architecture", "bullet": true, "level": 0},
+        {"text": "Meet the team", "bullet": true, "level": 0}
+      ]
+    },
+    "shape-4": {
+      "paragraphs": [
+        {"text": "Series A: $15M", "bullet": true, "level": 0},
+        {"text": "50 enterprise target", "bullet": true, "level": 0},
+        {"text": "FedRAMP by Q1 2027", "bullet": true, "level": 0}
+      ]
+    },
+    "shape-5": {
+      "paragraphs": [{"text": "Contact"}]
+    },
+    "shape-6": {
+      "paragraphs": [{"text": "invest@agentguard.ai"}]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "paragraphs": [{"text": "Thank\nyou", "color": "FFFFFF"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": ""}]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "paragraphs": [{"text": "Thank you"}]
+    },
+    "shape-1": {
+      "paragraphs": [{"text": "Jan 2026"}]
+    },
+    "shape-2": {
+      "paragraphs": [{"text": "© 2026 AgentGuard Inc. Confidential."}]
+    }
+  }
+}

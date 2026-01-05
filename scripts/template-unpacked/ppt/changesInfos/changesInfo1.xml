@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="ascii"?>
+<pc:chgInfo xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:ac="http://schemas.microsoft.com/office/drawing/2013/main/command" xmlns:pc="http://schemas.microsoft.com/office/powerpoint/2013/main/command">
+  <pc:docChgLst>
+    <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}"/>
+    <pc:docChg chg="undo custSel addSld delSld modSld sldOrd">
+      <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:54.785" v="174" actId="47"/>
+      <pc:docMkLst>
+        <pc:docMk/>
+      </pc:docMkLst>
+      <pc:sldChg chg="del">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:26:41.511" v="12" actId="47"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="109857222" sldId="256"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add del ord">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:39:43.206" v="44" actId="47"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="258"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add del">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:39:11.588" v="42" actId="2696"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="266"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="addSp delSp modSp add mod">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:26.429" v="171" actId="478"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="279"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:43:28.990" v="112" actId="113"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:spMk id="14937" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:41:23.912" v="110" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:spMk id="14938" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="del mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:26.429" v="171" actId="478"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:spMk id="14939" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:picChg chg="add del mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:45:22.819" v="119" actId="21"/>
+          <ac:picMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:picMk id="3" creationId="{2A22043C-D13E-4D47-865C-17DD0DD346B0}"/>
+          </ac:picMkLst>
+        </pc:picChg>
+        <pc:picChg chg="add del mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:47:27.811" v="146" actId="931"/>
+          <ac:picMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:picMk id="5" creationId="{3E6ECC16-33D6-49FC-A073-145ED6665F3A}"/>
+          </ac:picMkLst>
+        </pc:picChg>
+        <pc:picChg chg="add mod ord">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:23.538" v="170" actId="1076"/>
+          <ac:picMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:picMk id="7" creationId="{24B05228-0B24-4E69-9594-C93A2C880942}"/>
+          </ac:picMkLst>
+        </pc:picChg>
+        <pc:picChg chg="add del mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:45:28.323" v="121"/>
+          <ac:picMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:picMk id="12" creationId="{6AA4657C-84E8-4F4C-87D9-1FF60089F86E}"/>
+          </ac:picMkLst>
+        </pc:picChg>
+        <pc:picChg chg="add del mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:45:32.833" v="123"/>
+          <ac:picMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:picMk id="13" creationId="{07337FA5-0DE2-4CB0-A19F-1AA872F9ACCE}"/>
+          </ac:picMkLst>
+        </pc:picChg>
+        <pc:picChg chg="add del mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:47:29.071" v="149"/>
+          <ac:picMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:picMk id="14" creationId="{3F0AA93E-5046-4337-917C-88C49BDF3BFA}"/>
+          </ac:picMkLst>
+        </pc:picChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:35:01.331" v="18"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="306"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add mod">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:38:55.183" v="39" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="315"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:38:50.569" v="37" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="315"/>
+            <ac:spMk id="3145" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:38:55.183" v="39" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="315"/>
+            <ac:spMk id="3147" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add setBg">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:36:54.775" v="26"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="316"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:32:23.154" v="15"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="320"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:34:32.758" v="17"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="321"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add setBg">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:24:01.195" v="0"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="325"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add ord">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:34.730" v="173"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="331"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add del ord">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:42:50.715" v="111" actId="47"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="382"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add del ord">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:35:33.405" v="22"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="387"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del mod">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:54.785" v="174" actId="47"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="389"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:39:05.119" v="41" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="389"/>
+            <ac:spMk id="8488" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add setBg">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:32:50.348" v="16"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="390"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add del ord">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:39:22.203" v="43" actId="2696"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="2362901232" sldId="391"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldMasterChg chg="delSldLayout">
+        <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:54.785" v="174" actId="47"/>
+        <pc:sldMasterMkLst>
+          <pc:docMk/>
+          <pc:sldMasterMk cId="2384417043" sldId="2147483673"/>
+        </pc:sldMasterMkLst>
+        <pc:sldLayoutChg chg="del">
+          <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:39:11.588" v="42" actId="2696"/>
+          <pc:sldLayoutMkLst>
+            <pc:docMk/>
+            <pc:sldMasterMk cId="2384417043" sldId="2147483673"/>
+            <pc:sldLayoutMk cId="3113485713" sldId="2147483724"/>
+          </pc:sldLayoutMkLst>
+        </pc:sldLayoutChg>
+        <pc:sldLayoutChg chg="del">
+          <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:48:54.785" v="174" actId="47"/>
+          <pc:sldLayoutMkLst>
+            <pc:docMk/>
+            <pc:sldMasterMk cId="2384417043" sldId="2147483673"/>
+            <pc:sldLayoutMk cId="3927784301" sldId="2147483725"/>
+          </pc:sldLayoutMkLst>
+        </pc:sldLayoutChg>
+        <pc:sldLayoutChg chg="del">
+          <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:39:43.206" v="44" actId="47"/>
+          <pc:sldLayoutMkLst>
+            <pc:docMk/>
+            <pc:sldMasterMk cId="2384417043" sldId="2147483673"/>
+            <pc:sldLayoutMk cId="3766187968" sldId="2147483740"/>
+          </pc:sldLayoutMkLst>
+        </pc:sldLayoutChg>
+        <pc:sldLayoutChg chg="del">
+          <pc:chgData name="Liem Vo-Nguyen (ITSCo - US)" userId="5c0c970f-39f5-4fe7-a459-06ac3852409e" providerId="ADAL" clId="{5D24C97A-B994-4343-B57E-FF65FC8F96B4}" dt="2023-04-21T00:42:50.715" v="111" actId="47"/>
+          <pc:sldLayoutMkLst>
+            <pc:docMk/>
+            <pc:sldMasterMk cId="2384417043" sldId="2147483673"/>
+            <pc:sldLayoutMk cId="682055003" sldId="2147483771"/>
+          </pc:sldLayoutMkLst>
+        </pc:sldLayoutChg>
+      </pc:sldMasterChg>
+    </pc:docChg>
+  </pc:docChgLst>
+</pc:chgInfo>

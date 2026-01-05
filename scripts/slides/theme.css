@@ -1,0 +1,38 @@
+/* AgentGuard Pitch Deck Theme - Based on PwC template colors */
+:root {
+  /* Typography - Calibri to match template */
+  --font-family-display: Calibri, Arial, sans-serif;
+  --font-weight-display: 700;
+  --font-family-content: Calibri, Arial, sans-serif;
+  --font-weight-content: 400;
+  --font-size-content: 14px;
+  --line-height-content: 1.5;
+
+  /* PwC-inspired palette */
+  --color-surface: #ffffff;
+  --color-surface-foreground: #2c2c2c;
+  
+  /* Orange accent from template */
+  --color-primary: #D04A02;
+  --color-primary-foreground: #ffffff;
+  
+  /* Yellow/gold accent */
+  --color-secondary: #FAB500;
+  --color-secondary-foreground: #2c2c2c;
+  
+  /* Muted elements */
+  --color-muted: #f3f3f3;
+  --color-muted-foreground: #666666;
+  
+  /* Coral accent */
+  --color-accent: #D94A63;
+  --color-accent-foreground: #ffffff;
+  
+  /* Borders */
+  --color-border: #dedede;
+  
+  /* Spacing */
+  --spacing: 0.25rem;
+  --gap: 1rem;
+  --radius: 0.25rem;
+}

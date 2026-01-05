@@ -1,0 +1,144 @@
+version: '3.8'
+
+services:
+  # AgentGuard API Server
+  agentguard:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - AGENTGUARD_SERVER_PORT=8080
+      - AGENTGUARD_DATABASE_HOST=postgres
+      - AGENTGUARD_DATABASE_PORT=5432
+      - AGENTGUARD_DATABASE_USER=agentguard
+      - AGENTGUARD_DATABASE_PASSWORD=agentguard
+      - AGENTGUARD_DATABASE_DATABASE=agentguard
+      - AGENTGUARD_REDIS_HOST=redis
+      - AGENTGUARD_REDIS_PORT=6379
+      - AGENTGUARD_OTEL_ENABLED=true
+      - AGENTGUARD_OTEL_ENDPOINT=http://jaeger:4318
+      - AGENTGUARD_OPA_BUNDLE_PATH=/etc/agentguard/policies/bundle.tar.gz
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - agentguard
+
+  # PostgreSQL for persistent storage
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=agentguard
+      - POSTGRES_PASSWORD=agentguard
+      - POSTGRES_DB=agentguard
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agentguard"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - agentguard
+
+  # Redis for caching and rate limiting
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - agentguard
+
+  # ClickHouse for time-series observability data
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.1
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./clickhouse-init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - CLICKHOUSE_DB=agentguard
+      - CLICKHOUSE_USER=agentguard
+      - CLICKHOUSE_PASSWORD=agentguard
+    networks:
+      - agentguard
+
+  # Langfuse for base observability (optional)
+  langfuse:
+    image: langfuse/langfuse:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://agentguard:agentguard@postgres:5432/langfuse
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=your-secret-key-here
+      - SALT=your-salt-here
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - agentguard
+    profiles:
+      - observability
+
+  # Jaeger for distributed tracing (development)
+  jaeger:
+    image: jaegertracing/all-in-one:1.53
+    ports:
+      - "16686:16686"  # UI
+      - "4318:4318"    # OTLP HTTP
+      - "4317:4317"    # OTLP gRPC
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    networks:
+      - agentguard
+    profiles:
+      - observability
+
+  # OPA for policy evaluation (standalone mode)
+  opa:
+    image: openpolicyagent/opa:0.60.0
+    ports:
+      - "8181:8181"
+    command:
+      - "run"
+      - "--server"
+      - "--log-level=debug"
+      - "--set=decision_logs.console=true"
+      - "/policies"
+    volumes:
+      - ../../policies:/policies:ro
+    networks:
+      - agentguard
+    profiles:
+      - standalone-opa
+
+networks:
+  agentguard:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  clickhouse_data:

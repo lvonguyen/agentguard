@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1f6feb;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-size="28" font-weight="bold" fill="#e6edf3">AgentGuard Platform Architecture</text>
+  <line x1="400" y1="60" x2="800" y2="60" stroke="url(#headerGrad)" stroke-width="3"/>
+  
+  <!-- Agent Layer (Top) -->
+  <rect x="50" y="90" width="1100" height="80" rx="8" fill="#161b22" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="100" y="120" font-size="12" fill="#8b949e" font-weight="bold">AGENT INTEGRATIONS</text>
+  
+  <g transform="translate(100, 135)">
+    <rect width="140" height="30" rx="15" fill="#21262d" stroke="#00d4aa" stroke-width="1"/>
+    <text x="70" y="20" text-anchor="middle" font-size="11" fill="#e6edf3">LangChain</text>
+  </g>
+  <g transform="translate(260, 135)">
+    <rect width="140" height="30" rx="15" fill="#21262d" stroke="#00d4aa" stroke-width="1"/>
+    <text x="70" y="20" text-anchor="middle" font-size="11" fill="#e6edf3">LlamaIndex</text>
+  </g>
+  <g transform="translate(420, 135)">
+    <rect width="140" height="30" rx="15" fill="#21262d" stroke="#00d4aa" stroke-width="1"/>
+    <text x="70" y="20" text-anchor="middle" font-size="11" fill="#e6edf3">CrewAI</text>
+  </g>
+  <g transform="translate(580, 135)">
+    <rect width="140" height="30" rx="15" fill="#21262d" stroke="#00d4aa" stroke-width="1"/>
+    <text x="70" y="20" text-anchor="middle" font-size="11" fill="#e6edf3">AutoGen</text>
+  </g>
+  <g transform="translate(740, 135)">
+    <rect width="140" height="30" rx="15" fill="#21262d" stroke="#00d4aa" stroke-width="1"/>
+    <text x="70" y="20" text-anchor="middle" font-size="11" fill="#e6edf3">Claude MCP</text>
+  </g>
+  <g transform="translate(900, 135)">
+    <rect width="140" height="30" rx="15" fill="#21262d" stroke="#00d4aa" stroke-width="1"/>
+    <text x="70" y="20" text-anchor="middle" font-size="11" fill="#e6edf3">Custom Agents</text>
+  </g>
+  
+  <!-- SDK Layer -->
+  <rect x="50" y="190" width="1100" height="60" rx="8" fill="#1a3a5c" stroke="#1f6feb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="220" text-anchor="middle" font-size="16" font-weight="bold" fill="#00d4aa">AgentGuard SDK</text>
+  <text x="600" y="240" text-anchor="middle" font-size="11" fill="#8b949e">Python • Go • TypeScript — OpenTelemetry Instrumentation + Policy Hooks</text>
+  
+  <!-- Connection arrows -->
+  <path d="M 600 250 L 600 290" stroke="#30363d" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Core Services (5 boxes) -->
+  <g transform="translate(50, 300)">
+    <!-- Control Service -->
+    <rect width="200" height="150" rx="6" fill="#161b22" stroke="#f97583" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="200" height="30" rx="6" fill="#f97583"/>
+    <rect x="0" y="24" width="200" height="6" fill="#161b22"/>
+    <text x="100" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d1117">Control Service</text>
+    <text x="15" y="55" font-size="11" fill="#8b949e">• NIST AI RMF Mapping</text>
+    <text x="15" y="75" font-size="11" fill="#8b949e">• 800-53 Crosswalk</text>
+    <text x="15" y="95" font-size="11" fill="#8b949e">• Gap Analysis</text>
+    <text x="15" y="115" font-size="11" fill="#8b949e">• Control Inheritance</text>
+    <text x="15" y="135" font-size="11" fill="#8b949e">• Compliance Reports</text>
+  </g>
+  
+  <g transform="translate(270, 300)">
+    <!-- Observe Service -->
+    <rect width="200" height="150" rx="6" fill="#161b22" stroke="#79c0ff" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="200" height="30" rx="6" fill="#79c0ff"/>
+    <rect x="0" y="24" width="200" height="6" fill="#161b22"/>
+    <text x="100" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d1117">Observe Service</text>
+    <text x="15" y="55" font-size="11" fill="#8b949e">• Agent Traces</text>
+    <text x="15" y="75" font-size="11" fill="#8b949e">• Security Signals</text>
+    <text x="15" y="95" font-size="11" fill="#8b949e">• Anomaly Detection</text>
+    <text x="15" y="115" font-size="11" fill="#8b949e">• Cost Attribution</text>
+    <text x="15" y="135" font-size="11" fill="#8b949e">• Performance Metrics</text>
+  </g>
+  
+  <g transform="translate(490, 300)">
+    <!-- Policy Service -->
+    <rect width="200" height="150" rx="6" fill="#161b22" stroke="#00d4aa" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="200" height="30" rx="6" fill="#00d4aa"/>
+    <rect x="0" y="24" width="200" height="6" fill="#161b22"/>
+    <text x="100" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d1117">Policy Service</text>
+    <text x="15" y="55" font-size="11" fill="#8b949e">• OPA Policy Engine</text>
+    <text x="15" y="75" font-size="11" fill="#8b949e">• Tool Access Control</text>
+    <text x="15" y="95" font-size="11" fill="#8b949e">• Data Flow Gates</text>
+    <text x="15" y="115" font-size="11" fill="#8b949e">• HITL Workflows</text>
+    <text x="15" y="135" font-size="11" fill="#8b949e">• Runtime Enforcement</text>
+  </g>
+  
+  <g transform="translate(710, 300)">
+    <!-- Threat Service -->
+    <rect width="200" height="150" rx="6" fill="#161b22" stroke="#d29922" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="200" height="30" rx="6" fill="#d29922"/>
+    <rect x="0" y="24" width="200" height="6" fill="#161b22"/>
+    <text x="100" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d1117">Threat Service</text>
+    <text x="15" y="55" font-size="11" fill="#8b949e">• MITRE ATLAS</text>
+    <text x="15" y="75" font-size="11" fill="#8b949e">• STRIDE Analysis</text>
+    <text x="15" y="95" font-size="11" fill="#8b949e">• Risk Scoring</text>
+    <text x="15" y="115" font-size="11" fill="#8b949e">• Attack Simulation</text>
+    <text x="15" y="135" font-size="11" fill="#8b949e">• Threat Intelligence</text>
+  </g>
+  
+  <g transform="translate(930, 300)">
+    <!-- Maturity Service -->
+    <rect width="200" height="150" rx="6" fill="#161b22" stroke="#a371f7" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="200" height="30" rx="6" fill="#a371f7"/>
+    <rect x="0" y="24" width="200" height="6" fill="#161b22"/>
+    <text x="100" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d1117">Maturity Service</text>
+    <text x="15" y="55" font-size="11" fill="#8b949e">• Posture Scoring</text>
+    <text x="15" y="75" font-size="11" fill="#8b949e">• Benchmarks</text>
+    <text x="15" y="95" font-size="11" fill="#8b949e">• Roadmaps</text>
+    <text x="15" y="115" font-size="11" fill="#8b949e">• Peer Comparison</text>
+    <text x="15" y="135" font-size="11" fill="#8b949e">• Improvement Plans</text>
+  </g>
+  
+  <!-- API Gateway -->
+  <rect x="50" y="480" width="1100" height="50" rx="8" fill="#21262d" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="600" y="510" text-anchor="middle" font-size="14" font-weight="bold" fill="#e6edf3">REST API Gateway</text>
+  <text x="180" y="520" text-anchor="middle" font-size="10" fill="#8b949e">gRPC</text>
+  <text x="420" y="520" text-anchor="middle" font-size="10" fill="#8b949e">GraphQL</text>
+  <text x="780" y="520" text-anchor="middle" font-size="10" fill="#8b949e">Webhooks</text>
+  <text x="1020" y="520" text-anchor="middle" font-size="10" fill="#8b949e">SSE</text>
+  
+  <!-- Data Layer -->
+  <rect x="50" y="560" width="1100" height="90" rx="8" fill="#161b22" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="100" y="590" font-size="12" fill="#8b949e" font-weight="bold">DATA LAYER</text>
+  
+  <g transform="translate(100, 605)">
+    <rect width="180" height="35" rx="4" fill="#21262d" stroke="#00d4aa"/>
+    <text x="90" y="22" text-anchor="middle" font-size="12" fill="#e6edf3">PostgreSQL</text>
+  </g>
+  <g transform="translate(300, 605)">
+    <rect width="180" height="35" rx="4" fill="#21262d" stroke="#79c0ff"/>
+    <text x="90" y="22" text-anchor="middle" font-size="12" fill="#e6edf3">ClickHouse</text>
+  </g>
+  <g transform="translate(500, 605)">
+    <rect width="180" height="35" rx="4" fill="#21262d" stroke="#f97583"/>
+    <text x="90" y="22" text-anchor="middle" font-size="12" fill="#e6edf3">Redis</text>
+  </g>
+  <g transform="translate(700, 605)">
+    <rect width="180" height="35" rx="4" fill="#21262d" stroke="#d29922"/>
+    <text x="90" y="22" text-anchor="middle" font-size="12" fill="#e6edf3">OPA Bundles</text>
+  </g>
+  <g transform="translate(900, 605)">
+    <rect width="180" height="35" rx="4" fill="#21262d" stroke="#a371f7"/>
+    <text x="90" y="22" text-anchor="middle" font-size="12" fill="#e6edf3">S3 / Blob Storage</text>
+  </g>
+  
+  <!-- Infrastructure Layer -->
+  <rect x="50" y="680" width="1100" height="70" rx="8" fill="#0d1117" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="100" y="710" font-size="12" fill="#8b949e" font-weight="bold">INFRASTRUCTURE</text>
+  
+  <g transform="translate(100, 720)">
+    <rect width="120" height="25" rx="12" fill="#21262d" stroke="#30363d"/>
+    <text x="60" y="17" text-anchor="middle" font-size="10" fill="#8b949e">Kubernetes</text>
+  </g>
+  <g transform="translate(240, 720)">
+    <rect width="120" height="25" rx="12" fill="#21262d" stroke="#30363d"/>
+    <text x="60" y="17" text-anchor="middle" font-size="10" fill="#8b949e">AWS / GCP</text>
+  </g>
+  <g transform="translate(380, 720)">
+    <rect width="120" height="25" rx="12" fill="#21262d" stroke="#30363d"/>
+    <text x="60" y="17" text-anchor="middle" font-size="10" fill="#8b949e">Terraform</text>
+  </g>
+  <g transform="translate(520, 720)">
+    <rect width="120" height="25" rx="12" fill="#21262d" stroke="#30363d"/>
+    <text x="60" y="17" text-anchor="middle" font-size="10" fill="#8b949e">ArgoCD</text>
+  </g>
+  <g transform="translate(660, 720)">
+    <rect width="140" height="25" rx="12" fill="#21262d" stroke="#00d4aa"/>
+    <text x="70" y="17" text-anchor="middle" font-size="10" fill="#00d4aa">FedRAMP Ready</text>
+  </g>
+  <g transform="translate(820, 720)">
+    <rect width="120" height="25" rx="12" fill="#21262d" stroke="#30363d"/>
+    <text x="60" y="17" text-anchor="middle" font-size="10" fill="#8b949e">SOC 2 Type II</text>
+  </g>
+  <g transform="translate(960, 720)">
+    <rect width="120" height="25" rx="12" fill="#21262d" stroke="#30363d"/>
+    <text x="60" y="17" text-anchor="middle" font-size="10" fill="#8b949e">ISO 27001</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="780" text-anchor="middle" font-size="10" fill="#484f58">© 2026 AgentGuard Inc. • Confidential</text>
+</svg>
