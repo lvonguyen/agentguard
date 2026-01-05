@@ -2177,48 +2177,6 @@ class AgentGuardCallbackHandler(BaseCallbackHandler):
 
 ---
 
-## Interview STAR Stories
-
-### Story 1: Building the AI Security Framework
-
-**Situation:** Enterprise with 50+ AI agents deployed across business units had no consistent security governance. Each team made independent decisions about tools, data access, and monitoring.
-
-**Task:** Design and implement a comprehensive AI security governance framework that provides guardrails without blocking innovation.
-
-**Action:**
-- Conducted vendor landscape analysis: evaluated LangSmith, Langfuse, Lakera, AWS Bedrock Guardrails
-- Identified critical gap: no NIST AI RMF to 800-53 crosswalks for FedRAMP alignment
-- Designed AgentGuard framework with control mapping, observability, and policy engine
-- Built SDK middleware for LangChain that injects security controls at execution time
-- Created threat model template specific to agentic AI attack surfaces
-
-**Result:**
-- Achieved first-mover advantage with NIST AI RMF compliance mapping
-- Reduced AI security review time from 2 weeks to 2 days with automated gap analysis
-- 100% agent execution visibility with security-enriched tracing
-- Zero prompt injection incidents after Lakera Guard + custom policy deployment
-
-### Story 2: Solving the Compliance Translation Problem
-
-**Situation:** Security team struggling to explain AI risks to auditors using existing compliance framework language. Auditors unfamiliar with AI-specific threats, team unfamiliar with mapping AI controls to 800-53.
-
-**Task:** Create authoritative crosswalk between NIST AI RMF and NIST 800-53 that auditors and security teams could use.
-
-**Action:**
-- Analyzed both frameworks control-by-control
-- Identified mapping types: exact, partial, related, and gaps requiring supplements
-- Built structured YAML schema for machine-readable crosswalks
-- Developed gap analysis engine that assesses coverage and recommends controls
-- Created evidence requirement documentation for each mapped control
-
-**Result:**
-- First comprehensive AI RMF → 800-53 crosswalk in industry
-- Auditors able to assess AI controls using familiar 800-53 language
-- Gap analysis reduced FedRAMP AI authorization preparation by 60%
-- Framework adopted by 3 other enterprises in pilot program
-
----
-
 ## Contact
 
 **Author:** Liem Vo-Nguyen  
