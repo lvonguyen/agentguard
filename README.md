@@ -139,14 +139,24 @@ agentguard/
 │   ├── worker/                 # Background job worker
 │   └── cli/                    # Assessment CLI tool
 ├── internal/
+│   ├── api/                    # HTTP handlers
+│   ├── config/                 # Configuration management
+│   ├── models/                 # Data models
 │   ├── controls/               # Control framework definitions
 │   │   ├── nist_ai_rmf/        # NIST AI RMF controls
 │   │   ├── nist_800_53/        # 800-53 crosswalks
 │   │   └── iso_42001/          # ISO 42001 mapping
-│   ├── observability/          # Trace ingestion and enrichment
-│   │   ├── ingest/             # OTEL receiver
-│   │   ├── enrich/             # Security signal enrichment
-│   │   └── anomaly/            # Anomaly detection
+│   ├── llm/                    # LLM provider abstraction (merged from llm-chat-agent)
+│   │   ├── provider.go         # Provider interface
+│   │   ├── anthropic.go        # Anthropic Claude
+│   │   ├── openai.go           # OpenAI
+│   │   └── bedrock.go          # AWS Bedrock
+│   ├── vectordb/               # Vector DB abstraction (merged from llm-chat-agent)
+│   │   └── provider.go         # Pinecone, Weaviate, Azure Search
+│   ├── storage/                # Cloud storage abstraction (merged from llm-chat-agent)
+│   │   └── provider.go         # S3, Blob, GCS
+│   ├── telemetry/              # LLM telemetry (merged from llm-chat-agent)
+│   │   └── telemetry.go        # OTEL integration
 │   ├── policy/                 # OPA integration
 │   │   ├── engine/             # Policy evaluation
 │   │   └── policies/           # Built-in policies
@@ -154,11 +164,14 @@ agentguard/
 │   │   ├── stride/             # STRIDE analysis
 │   │   └── atlas/              # MITRE ATLAS mapping
 │   ├── maturity/               # Maturity model assessment
-│   ├── integrations/           # External integrations
-│   │   ├── langfuse/           # Langfuse client
-│   │   ├── lakera/             # Lakera Guard client
-│   │   └── grc/                # ServiceNow/Archer
-│   └── api/                    # HTTP handlers
+│   └── integrations/           # External integrations
+│       ├── langfuse/           # Langfuse client
+│       ├── lakera/             # Lakera Guard client
+│       └── grc/                # ServiceNow/Archer
+├── observability/              # Observability configs (merged from llm-chat-agent)
+│   ├── README.md               # Observability guide
+│   ├── prometheus/             # Prometheus configs
+│   └── grafana/                # Grafana dashboards
 ├── sdk/
 │   ├── python/                 # Python SDK (LangChain, CrewAI)
 │   ├── typescript/             # TypeScript SDK
@@ -179,28 +192,20 @@ agentguard/
 │   └── prompt-injection/       # Injection detection
 ├── docs/
 │   ├── HLD.md                  # High-Level Design
-│   ├── architecture/           # Architecture diagrams
-│   ├── adr/                    # Architecture Decision Records
-│   │   ├── ADR-001-observability-strategy.md
-│   │   ├── ADR-002-control-framework-selection.md
-│   │   ├── ADR-003-policy-engine-selection.md
-│   │   └── ADR-004-vendor-integration-strategy.md
-│   ├── threat-model.md         # System threat model
-│   └── operating-model.md      # Adoption playbook
+│   └── adr/                    # Architecture Decision Records
 ├── infra/
 │   ├── terraform/              # Infrastructure as Code
 │   └── k8s/                    # Kubernetes manifests
 ├── examples/
 │   ├── langchain-agent/        # LangChain integration example
-│   ├── crewai-workflow/        # CrewAI integration example
-│   └── assessment-report/      # Sample assessment output
-├── configs/
-│   └── config.example.yaml
+│   └── crewai-workflow/        # CrewAI integration example
 ├── Dockerfile
 ├── docker-compose.yml
 ├── Makefile
 └── README.md
 ```
+
+> **Merged from `llm-chat-agent`:** LLM provider abstraction, vector DB, cloud storage, telemetry, and observability modules now integrated for a complete AI security platform.
 
 ## 🚀 Key Features
 
