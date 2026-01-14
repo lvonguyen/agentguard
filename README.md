@@ -4,7 +4,7 @@
 
 AgentGuard is a comprehensive security framework and reference implementation for governing AI agents in enterprise environments. It provides control mapping to established frameworks (NIST AI RMF, ISO 42001), runtime observability for agent execution chains, and policy-as-code guardrails for AI system deployments.
 
-## 🎯 What This Solves
+## [*] What This Solves
 
 Enterprise AI adoption faces unique security challenges:
 - **Security Teams** lack frameworks for assessing AI-specific risks
@@ -19,7 +19,7 @@ AgentGuard bridges these needs with:
 - Threat modeling templates for agentic systems
 - Maturity model for AI security posture assessment
 
-## 🏭 Vendor Landscape Analysis
+## [+] Vendor Landscape Analysis
 
 ### Build vs. Buy Decision Matrix
 
@@ -76,7 +76,7 @@ AgentGuard bridges these needs with:
 - Observability tools (LangSmith) separate from policy tools (Guardrails)
 - AgentGuard unifies: observe → detect → enforce → audit in single platform
 
-## 🏗️ Architecture
+## [/] Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -130,7 +130,7 @@ AgentGuard bridges these needs with:
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-## 📁 Repository Structure
+## [/] Repository Structure
 
 ```
 agentguard/
@@ -207,7 +207,7 @@ agentguard/
 
 > **Merged from `llm-chat-agent`:** LLM provider abstraction, vector DB, cloud storage, telemetry, and observability modules now integrated for a complete AI security platform.
 
-## 🚀 Key Features
+## [+] Key Features
 
 ### Control Framework Mapping
 - NIST AI RMF control definitions with evidence requirements
@@ -239,7 +239,7 @@ agentguard/
 - Benchmark comparison
 - Roadmap generation for maturity improvement
 
-## 🛠️ Tech Stack
+## [+] Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
@@ -251,7 +251,7 @@ agentguard/
 | Database | PostgreSQL | Control mappings, assessments |
 | SDK | Python, TypeScript, Go | Agent framework integration |
 
-## 🏃 Quick Start
+## [>] Quick Start
 
 ### Prerequisites
 - Go 1.22+
@@ -314,7 +314,7 @@ agent_executor = middleware.wrap(agent_executor)
 result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 ```
 
-## 📖 Documentation
+## [>] Documentation
 
 - [High-Level Design](docs/HLD.md)
 - [Control Framework Reference](docs/controls.md)
@@ -328,7 +328,7 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - [ADR-003: Policy Engine Selection](docs/adr/ADR-003-policy-engine-selection.md)
 - [ADR-004: Vendor Integration Strategy](docs/adr/ADR-004-vendor-integration-strategy.md)
 
-## 🔐 Security Considerations
+## [!] Security Considerations
 
 - All API endpoints require authentication (OIDC)
 - Service-to-service communication uses mTLS
@@ -336,7 +336,7 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - PII detected in traces automatically redacted
 - Audit logging for all policy evaluations
 
-## 🗺️ Roadmap
+## [>] Roadmap
 
 ### Phase 1: Framework Foundation (Current)
 - [x] NIST AI RMF control definitions
@@ -368,11 +368,11 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - [ ] Lakera Guard integration
 - [ ] SIEM export (Splunk, Sentinel)
 
-## 📝 License
+## License
 
 Apache 2.0 License - See [LICENSE](LICENSE)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
