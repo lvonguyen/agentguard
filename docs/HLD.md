@@ -1,9 +1,26 @@
-# AgentGuard — High-Level Design Document
+# <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/shield.svg" width="32" height="32" alt="shield"> AgentGuard — High-Level Design Document
 
-**Version:** 1.0  
-**Author:** Liem Vo-Nguyen  
-**Date:** January 2026  
+**Version:** 1.0
+**Author:** Liem Vo-Nguyen
+**Date:** January 2026
 **Status:** Draft
+
+---
+
+## Table of Contents
+
+- [Executive Summary](#executive-summary)
+- [Market Analysis & Build/Buy Rationale](#market-analysis--buildbuy-rationale)
+- [Architecture Overview](#architecture-overview)
+- [Component Specifications](#component-specifications)
+  - [Control Mapping Service](#1--control-mapping-service)
+  - [Observability Service](#2--observability-service)
+  - [Policy Service](#3--policy-service)
+  - [Threat Modeling Service](#4--threat-modeling-service)
+  - [Maturity Assessment Service](#5--maturity-assessment-service)
+- [API Specification](#api-specification)
+- [SDK Integration](#sdk-integration)
+- [Roadmap](#roadmap)
 
 ---
 
@@ -94,6 +111,79 @@ AgentGuard is an AI security governance framework that addresses the unique risk
 ---
 
 ## Architecture Overview
+
+```mermaid
+graph TB
+    subgraph Platform["AGENTGUARD PLATFORM"]
+        subgraph Portal["GOVERNANCE PORTAL (React/Next.js)"]
+            CE["Control Explorer<br/>• Framework browser<br/>• Crosswalk viewer<br/>• Gap report"]
+            AR["Agent Registry<br/>• Inventory<br/>• Capability manifest<br/>• Policy binding"]
+            TM["Threat Modeler<br/>• STRIDE wizard<br/>• Attack trees<br/>• ATLAS map"]
+            MA["Maturity Assessment<br/>• Self-assess<br/>• Benchmarks<br/>• Roadmap generator"]
+            TE["Trace Explorer<br/>• Execution chains<br/>• Tool calls<br/>• Latency"]
+            AD["Anomaly Dashboard<br/>• Injection attempts<br/>• Tool abuse<br/>• Data leak"]
+            AuR["Audit Reports<br/>• Compliance evidence<br/>• GRC export"]
+        end
+
+        GW["API GATEWAY (Kong / Envoy)<br/>AuthN: Okta / Azure AD OIDC | Rate Limiting: 1000 req/min"]
+
+        subgraph Services["CORE SERVICES"]
+            CS["CONTROL SERVICE<br/>• NIST AI RMF<br/>• 800-53 xwalk<br/>• ISO 42001"]
+            OS["OBSERVE SERVICE<br/>• OTEL ingest<br/>• Enrich<br/>• Anomaly/Alert"]
+            PS["POLICY SERVICE<br/>• OPA engine<br/>• Tool policies<br/>• Data policies"]
+            TS["THREAT SERVICE<br/>• STRIDE engine<br/>• ATLAS mapper<br/>• Attack trees"]
+            MS["MATURITY SERVICE<br/>• Assess engine<br/>• Score/Report<br/>• Roadmap"]
+        end
+
+        subgraph DataLayer["DATA LAYER"]
+            PG[("PostgreSQL<br/>Controls, Agents, Assess")]
+            CH[("ClickHouse<br/>Traces, Anomalies, Metrics")]
+            RD[("Redis<br/>Policy cache, Sessions")]
+            S3[("S3/Blob<br/>Audit exports, Reports")]
+        end
+    end
+
+    subgraph Runtime["AGENT RUNTIME ENVIRONMENT"]
+        subgraph SDK["AgentGuard SDK Middleware"]
+            PRE["Pre-invoke<br/>• Policy eval<br/>• Injection detection<br/>• Capability check"]
+            POST["Post-invoke<br/>• Trace emit<br/>• PII redact<br/>• Anomaly signals"]
+        end
+
+        subgraph Framework["Agent Framework (LangChain / CrewAI / etc.)"]
+            LLM["LLM Call"] --> RAG["Retrieval (RAG)"]
+            RAG --> TOOLS["Tools Execution"]
+            TOOLS --> OUTPUT["Output Generate"]
+        end
+
+        VDB[("Vector DB<br/>(Pinecone)")]
+        TAPI["Tool APIs<br/>(Customer)"]
+        LLMP["LLM Provider<br/>(OpenAI/Anthropic)"]
+    end
+
+    Portal --> GW
+    GW --> CS & OS & PS & TS & MS
+    CS & OS & PS & TS & MS --> DataLayer
+    DataLayer -.->|SDK Middleware| PRE
+    PRE --> Framework
+    Framework --> POST
+    POST -.-> OS
+    Framework -.-> VDB & TAPI & LLMP
+
+    classDef portal fill:#3b82f6,stroke:#2563eb,color:#fff
+    classDef service fill:#1e40af,stroke:#1e3a8a,color:#fff
+    classDef data fill:#22c55e,stroke:#16a34a,color:#fff
+    classDef runtime fill:#f59e0b,stroke:#d97706,color:#fff
+    classDef gateway fill:#6366f1,stroke:#4f46e5,color:#fff
+
+    class CE,AR,TM,MA,TE,AD,AuR portal
+    class CS,OS,PS,TS,MS service
+    class PG,CH,RD,S3,VDB data
+    class PRE,POST,LLM,RAG,TOOLS,OUTPUT,TAPI,LLMP runtime
+    class GW gateway
+```
+
+<details>
+<summary>ASCII Diagram (Legacy)</summary>
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -198,11 +288,13 @@ AgentGuard is an AI security governance framework that addresses the unique risk
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+</details>
+
 ---
 
 ## Component Specifications
 
-### 1. Control Mapping Service
+### 1. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="Go"> Control Mapping Service
 
 Manages control framework definitions and crosswalk mappings.
 
@@ -682,7 +774,7 @@ mappings:
 
 ---
 
-### 2. Observability Service
+### 2. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="Grafana"> Observability Service
 
 Ingests agent execution traces, enriches with security signals, and detects anomalies.
 
@@ -894,7 +986,7 @@ type AgentBaseline struct {
 
 ---
 
-### 3. Policy Service
+### 3. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="Policy"> Policy Service
 
 Enforces guardrails on agent behavior using OPA/Rego.
 
@@ -1102,7 +1194,7 @@ violations[msg] {
 
 ---
 
-### 4. Threat Modeling Service
+### 4. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/rapid7-dark.svg" width="24" height="24" alt="Threat"> Threat Modeling Service
 
 Generates and maintains threat models for agentic systems.
 
@@ -1553,7 +1645,7 @@ atlas_mappings:
 
 ---
 
-### 5. Maturity Assessment Service
+### 5. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/checkmk.svg" width="24" height="24" alt="Assessment"> Maturity Assessment Service
 
 Evaluates organizational AI security posture.
 
