@@ -1,4 +1,6 @@
-# <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/shield.svg" width="32" height="32" alt="shield"> AgentGuard — High-Level Design Document
+<img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="48" height="48" alt="AgentGuard" align="left" style="margin-right: 10px;">
+
+# AgentGuard — High-Level Design Document
 
 **Version:** 1.0
 **Author:** Liem Vo-Nguyen
@@ -295,7 +297,9 @@ graph TB
 
 ## Component Specifications
 
-### 1. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="Go"> Control Mapping Service
+<img src="../../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="Go">
+
+### 1. Control Mapping Service
 
 Manages control framework definitions and crosswalk mappings.
 
@@ -775,7 +779,9 @@ mappings:
 
 ---
 
-### 2. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="Grafana"> Observability Service
+<img src="../../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="Grafana">
+
+### 2. Observability Service
 
 Ingests agent execution traces, enriches with security signals, and detects anomalies.
 
@@ -987,7 +993,9 @@ type AgentBaseline struct {
 
 ---
 
-### 3. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="Policy"> Policy Service
+<img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="Policy">
+
+### 3. Policy Service
 
 Enforces guardrails on agent behavior using OPA/Rego.
 
@@ -1195,7 +1203,9 @@ violations[msg] {
 
 ---
 
-### 4. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/rapid7-dark.svg" width="24" height="24" alt="Threat"> Threat Modeling Service
+<img src="../../../../reference/templates/icons/homelab-svg-assets/assets/rapid7-dark.svg" width="24" height="24" alt="Threat">
+
+### 4. Threat Modeling Service
 
 Generates and maintains threat models for agentic systems.
 
@@ -1646,7 +1656,9 @@ atlas_mappings:
 
 ---
 
-### 5. <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/checkmk.svg" width="24" height="24" alt="Assessment"> Maturity Assessment Service
+<img src="../../../../reference/templates/icons/homelab-svg-assets/assets/checkmk.svg" width="24" height="24" alt="Assessment">
+
+### 5. Maturity Assessment Service
 
 Evaluates organizational AI security posture.
 

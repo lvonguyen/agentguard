@@ -1,4 +1,4 @@
-<img src="../../../reference/templates/icons/homelab-svg-assets/assets/shield.svg" width="48" height="48" alt="shield" align="left" style="margin-right: 10px;">
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="48" height="48" alt="AgentGuard" align="left" style="margin-right: 10px;">
 
 # AgentGuard
 
