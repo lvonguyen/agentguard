@@ -1,4 +1,6 @@
-# <img src="../../../reference/templates/icons/homelab-svg-assets/assets/shield.svg" width="32" height="32" alt="shield"> AgentGuard
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/shield.svg" width="48" height="48" alt="shield" align="left" style="margin-right: 10px;">
+
+# AgentGuard
 
 **AI Security Governance Framework for Agentic Systems**
 
@@ -316,21 +318,32 @@ agentguard/
 
 > **Merged from `llm-chat-agent`:** LLM provider abstraction, vector DB, cloud storage, telemetry, and observability modules now integrated for a complete AI security platform.
 
-## <img src="../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="go"> [+] Key Features
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="go">
 
-### <img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault"> Control Framework Mapping
+## [+] Key Features
+
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault">
+
+### Control Framework Mapping
+
 - NIST AI RMF control definitions with evidence requirements
 - Bidirectional crosswalks to NIST 800-53 (FedRAMP alignment)
 - ISO 42001 mapping for international compliance
 - Gap analysis reporting for audit preparation
 
-### <img src="../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana"> Agent Observability
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana">
+
+### Agent Observability
+
 - SDK middleware for LangChain, CrewAI, AutoGen, Semantic Kernel
 - Full execution chain tracing (prompt → retrieval → tool calls → output)
 - Security signal enrichment (injection attempts, PII exposure, tool abuse)
 - Integration with Langfuse for base telemetry
 
-### <img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault"> Policy-as-Code
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault">
+
+### Policy-as-Code
+
 - OPA/Rego policies for agent deployments
 - Tool access control (least privilege per agent capability)
 - Data flow policies (PII/sensitive data handling)
@@ -348,7 +361,9 @@ agentguard/
 - Benchmark comparison
 - Roadmap generation for maturity improvement
 
-## <img src="../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="go"> [+] Tech Stack
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="go">
+
+## [+] Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
@@ -437,7 +452,9 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - [ADR-003: Policy Engine Selection](docs/adr/ADR-003-policy-engine-selection.md)
 - [ADR-004: Vendor Integration Strategy](docs/adr/ADR-004-vendor-integration-strategy.md)
 
-## <img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="32" height="32" alt="vault"> [!] Security Considerations
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="32" height="32" alt="vault">
+
+## [!] Security Considerations
 
 - All API endpoints require authentication (OIDC)
 - Service-to-service communication uses mTLS
@@ -453,13 +470,19 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - [ ] ISO 42001 mapping
 - [ ] Gap analysis CLI tool
 
-### Phase 2: <img src="../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana"> Observability
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana">
+
+### Phase 2: Observability
+
 - [ ] Python SDK (LangChain, CrewAI)
 - [ ] OTEL trace ingestion
 - [ ] Security signal enrichment
 - [ ] Langfuse integration
 
-### Phase 3: <img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault"> Policy Engine
+<img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault">
+
+### Phase 3: Policy Engine
+
 - [ ] OPA integration
 - [ ] Tool access policies
 - [ ] Data flow policies
