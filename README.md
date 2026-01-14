@@ -98,6 +98,7 @@ AgentGuard bridges these needs with:
 ## [/] Architecture
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'Georgia'}}}%%
 flowchart TB
     subgraph Portal["<b>GOVERNANCE PORTAL</b><br/>React/Next.js"]
         style Portal fill:#3b82f6,stroke:#1e40af,color:#fff

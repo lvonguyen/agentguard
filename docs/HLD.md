@@ -113,6 +113,7 @@ AgentGuard is an AI security governance framework that addresses the unique risk
 ## Architecture Overview
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'Georgia'}}}%%
 graph TB
     subgraph Platform["AGENTGUARD PLATFORM"]
         subgraph Portal["GOVERNANCE PORTAL (React/Next.js)"]
