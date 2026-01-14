@@ -10,7 +10,7 @@
 ## Table of Contents
 
 - [Executive Summary](#executive-summary)
-- [Market Analysis & Build/Buy Rationale](#market-analysis--buildbuy-rationale)
+- [Market Analysis and Build/Buy Rationale](#market-analysis-and-buildbuy-rationale)
 - [Architecture Overview](#architecture-overview)
 - [Component Specifications](#component-specifications)
   - [Control Mapping Service](#1--control-mapping-service)
@@ -43,7 +43,7 @@ AgentGuard is an AI security governance framework that addresses the unique risk
 
 ---
 
-## Market Analysis & Build/Buy Rationale
+## Market Analysis and Build/Buy Rationale
 
 ### Vendor Landscape Deep Dive
 
@@ -55,7 +55,7 @@ AgentGuard is an AI security governance framework that addresses the unique risk
 | **Langfuse** | OSS / Cloud $59/seat | Self-hostable, open source, cost tracking, growing ecosystem | Security features immature, no compliance mapping | **Primary integration** - extend with security |
 | **Helicone** | Free tier + usage | Simple proxy setup, good latency analytics | No agent-specific features, limited trace depth | Secondary option |
 | **Arize Phoenix** | OSS / Enterprise | Strong ML heritage, embedding drift detection | LLM features still maturing, complex setup | Embed drift detection capability |
-| **Weights & Biases** | $50/seat | Mature platform, experiment tracking | LLM tracing is add-on, not core competency | Skip |
+| **Weights and Biases** | $50/seat | Mature platform, experiment tracking | LLM tracing is add-on, not core competency | Skip |
 
 **Decision:** Integrate with Langfuse as primary observability backend. It's open source, self-hostable (important for compliance), and has clean APIs for extension. AgentGuard adds security-specific spans and enrichment.
 

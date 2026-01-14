@@ -1,8 +1,27 @@
-# AgentGuard
+# <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/shield.svg" width="32" height="32" alt="shield"> AgentGuard
 
 **AI Security Governance Framework for Agentic Systems**
 
 AgentGuard is a comprehensive security framework and reference implementation for governing AI agents in enterprise environments. It provides control mapping to established frameworks (NIST AI RMF, ISO 42001), runtime observability for agent execution chains, and policy-as-code guardrails for AI system deployments.
+
+---
+
+## Table of Contents
+
+- [What This Solves](#-what-this-solves)
+- [Vendor Landscape Analysis](#-vendor-landscape-analysis)
+- [Architecture](#-architecture)
+- [Repository Structure](#-repository-structure)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Quick Start](#-quick-start)
+- [Documentation](#-documentation)
+- [Security Considerations](#-security-considerations)
+- [Roadmap](#-roadmap)
+- [License](#license)
+- [Contributing](#contributing)
+
+---
 
 ## [*] What This Solves
 
@@ -78,6 +97,93 @@ AgentGuard bridges these needs with:
 
 ## [/] Architecture
 
+```mermaid
+flowchart TB
+    subgraph Portal["<b>GOVERNANCE PORTAL</b><br/>React/Next.js"]
+        style Portal fill:#3b82f6,stroke:#1e40af,color:#fff
+        CE[Control Explorer]
+        AR[Agent Registry]
+        TM[Threat Model]
+        MA[Maturity Assessment]
+    end
+
+    subgraph Gateway["<b>API GATEWAY</b><br/>Kong/NGINX"]
+        style Gateway fill:#3b82f6,stroke:#1e40af,color:#fff
+        AUTH[AuthN: Okta / Azure AD OIDC]
+    end
+
+    subgraph Services["Core Services"]
+        subgraph CMS["<b>CONTROL MAPPING SVC</b>"]
+            style CMS fill:#1e40af,stroke:#1e40af,color:#fff
+            NIST[NIST AI RMF]
+            XWALK[800-53 Xwalk]
+            ISO[ISO 42001]
+            GAP[Gap Analysis]
+        end
+
+        subgraph OBS["<b>OBSERVABILITY SERVICE</b>"]
+            style OBS fill:#1e40af,stroke:#1e40af,color:#fff
+            TRACE[Trace Ingestion]
+            ENRICH[Security Enrich]
+            ANOMALY[Anomaly Detection]
+            AUDIT[Audit Trail Gen]
+        end
+
+        subgraph POLICY["<b>POLICY ENGINE</b><br/>OPA/Rego"]
+            style POLICY fill:#1e40af,stroke:#1e40af,color:#fff
+            TOOL[Tool Access Policies]
+            FLOW[Data Flow Controls]
+        end
+    end
+
+    subgraph SDK["<b>AGENT SECURITY MIDDLEWARE</b><br/>SDK"]
+        style SDK fill:#f59e0b,stroke:#d97706,color:#000
+        LC[LangChain]
+        CREW[CrewAI]
+        AUTO[AutoGen]
+        SK[Semantic Kernel]
+    end
+
+    subgraph External["External Systems"]
+        subgraph LLM["<b>LLM PROVIDERS</b>"]
+            style LLM fill:#f59e0b,stroke:#d97706,color:#000
+            OPENAI[OpenAI]
+            ANTHROPIC[Anthropic]
+            BEDROCK[AWS Bedrock]
+            AZURE[Azure OpenAI]
+        end
+
+        subgraph ENT["<b>ENTERPRISE SVC</b>"]
+            style ENT fill:#1e40af,stroke:#1e40af,color:#fff
+            SNOW[ServiceNow]
+            ARCHER[RSA Archer]
+            LANGFUSE[Langfuse]
+            LAKERA[Lakera Guard]
+        end
+
+        subgraph DATA["<b>DATA STORES</b>"]
+            style DATA fill:#22c55e,stroke:#16a34a,color:#fff
+            PG[(PostgreSQL)]
+            CH[(ClickHouse)]
+            S3[(S3/Blob)]
+        end
+    end
+
+    Portal --> Gateway
+    Gateway --> CMS
+    Gateway --> OBS
+    Gateway --> POLICY
+    CMS --> SDK
+    OBS --> SDK
+    POLICY --> SDK
+    SDK --> LLM
+    SDK --> ENT
+    SDK --> DATA
+```
+
+<details>
+<summary>ASCII Diagram (Legacy)</summary>
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                            AGENTGUARD PLATFORM                                  │
@@ -129,6 +235,8 @@ AgentGuard bridges these needs with:
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+</details>
 
 ## [/] Repository Structure
 
@@ -207,21 +315,21 @@ agentguard/
 
 > **Merged from `llm-chat-agent`:** LLM provider abstraction, vector DB, cloud storage, telemetry, and observability modules now integrated for a complete AI security platform.
 
-## [+] Key Features
+## <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="go"> [+] Key Features
 
-### Control Framework Mapping
+### <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault"> Control Framework Mapping
 - NIST AI RMF control definitions with evidence requirements
 - Bidirectional crosswalks to NIST 800-53 (FedRAMP alignment)
 - ISO 42001 mapping for international compliance
 - Gap analysis reporting for audit preparation
 
-### Agent Observability
+### <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana"> Agent Observability
 - SDK middleware for LangChain, CrewAI, AutoGen, Semantic Kernel
 - Full execution chain tracing (prompt → retrieval → tool calls → output)
 - Security signal enrichment (injection attempts, PII exposure, tool abuse)
 - Integration with Langfuse for base telemetry
 
-### Policy-as-Code
+### <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault"> Policy-as-Code
 - OPA/Rego policies for agent deployments
 - Tool access control (least privilege per agent capability)
 - Data flow policies (PII/sensitive data handling)
@@ -239,7 +347,7 @@ agentguard/
 - Benchmark comparison
 - Roadmap generation for maturity improvement
 
-## [+] Tech Stack
+## <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/go-blue.svg" width="24" height="24" alt="go"> [+] Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
@@ -248,7 +356,7 @@ agentguard/
 | Policy Engine | OPA / Rego | Guardrails, validation |
 | Observability | OpenTelemetry | Trace collection |
 | Time-Series | ClickHouse | Trace storage, analytics |
-| Database | PostgreSQL | Control mappings, assessments |
+| Database | <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/postgresql.svg" width="24" height="24" alt="postgresql"> PostgreSQL | Control mappings, assessments |
 | SDK | Python, TypeScript, Go | Agent framework integration |
 
 ## [>] Quick Start
@@ -328,7 +436,7 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - [ADR-003: Policy Engine Selection](docs/adr/ADR-003-policy-engine-selection.md)
 - [ADR-004: Vendor Integration Strategy](docs/adr/ADR-004-vendor-integration-strategy.md)
 
-## [!] Security Considerations
+## <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="32" height="32" alt="vault"> [!] Security Considerations
 
 - All API endpoints require authentication (OIDC)
 - Service-to-service communication uses mTLS
@@ -344,13 +452,13 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 - [ ] ISO 42001 mapping
 - [ ] Gap analysis CLI tool
 
-### Phase 2: Observability
+### Phase 2: <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana"> Observability
 - [ ] Python SDK (LangChain, CrewAI)
 - [ ] OTEL trace ingestion
 - [ ] Security signal enrichment
 - [ ] Langfuse integration
 
-### Phase 3: Policy Engine
+### Phase 3: <img src="../../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault"> Policy Engine
 - [ ] OPA integration
 - [ ] Tool access policies
 - [ ] Data flow policies
