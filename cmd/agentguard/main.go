@@ -16,6 +16,7 @@ import (
 	"github.com/agentguard/agentguard/internal/api"
 	"github.com/agentguard/agentguard/internal/config"
 	"github.com/agentguard/agentguard/internal/controls"
+	"github.com/agentguard/agentguard/internal/repository/postgres"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
@@ -160,9 +161,46 @@ func runServer(cmd *cobra.Command, args []string) error {
 		Str("port", cfg.Server.Port).
 		Msg("Starting AgentGuard server")
 
-	// Initialize router (nil deps = use stub handlers without DB)
-	// TODO: Initialize DB and pass RouterDeps for production use
-	router := api.NewRouter(cfg, nil)
+	// Initialize database connection
+	var deps *api.RouterDeps
+	ctx := context.Background()
+
+	if cfg.Database.Host != "" && cfg.Database.User != "" {
+		dbCfg := postgres.Config{
+			Host:     cfg.Database.Host,
+			Port:     cfg.Database.Port,
+			User:     cfg.Database.User,
+			Password: cfg.Database.Password,
+			Database: cfg.Database.Database,
+			SSLMode:  cfg.Database.SSLMode,
+			MaxConns: int32(cfg.Database.MaxConns),
+		}
+
+		db, err := postgres.New(ctx, dbCfg)
+		if err != nil {
+			log.Warn().Err(err).Msg("Database connection failed, using stub handlers")
+		} else {
+			log.Info().
+				Str("host", cfg.Database.Host).
+				Str("database", cfg.Database.Database).
+				Msg("Database connected")
+
+			// Create repositories
+			controlRepo := postgres.NewControlRepository(db)
+
+			deps = &api.RouterDeps{
+				ControlRepo: controlRepo,
+			}
+
+			// Ensure DB is closed on shutdown
+			defer db.Close()
+		}
+	} else {
+		log.Info().Msg("No database configured, using stub handlers")
+	}
+
+	// Initialize router with dependencies
+	router := api.NewRouter(cfg, deps)
 
 	// Create HTTP server
 	srv := &http.Server{
@@ -180,10 +218,10 @@ func runServer(cmd *cobra.Command, args []string) error {
 		<-sigChan
 
 		log.Info().Msg("Shutting down server...")
-		ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+		shutdownCtx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 		defer cancel()
 
-		if err := srv.Shutdown(ctx); err != nil {
+		if err := srv.Shutdown(shutdownCtx); err != nil {
 			log.Error().Err(err).Msg("Server shutdown error")
 		}
 	}()
