@@ -2,6 +2,9 @@
 
 # AgentGuard
 
+![Development Status](https://img.shields.io/badge/status-early%20development-orange)
+![Implementation](https://img.shields.io/badge/implementation-25%25-yellow)
+
 **AI Security Governance Framework for Agentic Systems**
 
 AgentGuard is a comprehensive security framework and reference implementation for governing AI agents in enterprise environments. It provides control mapping to established frameworks (NIST AI RMF, ISO 42001), runtime observability for agent execution chains, and policy-as-code guardrails for AI system deployments.
@@ -10,6 +13,8 @@ AgentGuard is a comprehensive security framework and reference implementation fo
 
 ## Table of Contents
 
+- [Implementation Status](#-implementation-status)
+- [Known Limitations](#-known-limitations)
 - [What This Solves](#-what-this-solves)
 - [Vendor Landscape Analysis](#-vendor-landscape-analysis)
 - [Architecture](#-architecture)
@@ -22,6 +27,63 @@ AgentGuard is a comprehensive security framework and reference implementation fo
 - [Roadmap](#-roadmap)
 - [License](#license)
 - [Contributing](#contributing)
+
+---
+
+## [/] Implementation Status
+
+> **Current State:** Early development (~25% complete). Core framework structures defined, API handlers stubbed.
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **Control Frameworks** | | |
+| NIST AI RMF definitions | Done | Complete control taxonomy in YAML |
+| NIST 800-53 crosswalks | Done | Bidirectional mapping implemented |
+| ISO 42001 mapping | Not Started | Framework placeholder only |
+| **API Layer** | | |
+| HTTP handlers | Stubbed | Endpoints defined, no business logic |
+| Authentication (OIDC) | Not Started | Interface defined |
+| Rate limiting | Not Started | |
+| **Data Layer** | | |
+| PostgreSQL models | Not Started | Schema designed, no implementation |
+| ClickHouse telemetry | Not Started | |
+| Migrations | Not Started | |
+| **SDK** | | |
+| Python SDK | Not Started | Interface designed |
+| TypeScript SDK | Not Started | |
+| Go SDK | Not Started | |
+| **Observability** | | |
+| OTEL integration | Partial | Telemetry structs defined |
+| Langfuse integration | Not Started | |
+| Security enrichment | Not Started | |
+| **Policy Engine** | | |
+| OPA integration | Not Started | Rego policies drafted |
+| Tool access policies | Not Started | |
+| **Testing** | | |
+| Unit tests | 0% | No test coverage |
+| Integration tests | 0% | |
+
+---
+
+## [!] Known Limitations
+
+This is a **portfolio reference implementation**, not production software:
+
+1. **No Database Layer** - Schema designed but PostgreSQL/ClickHouse connections not implemented
+2. **Stubbed Handlers** - API routes exist but return placeholder responses
+3. **No Authentication** - OIDC interface defined but no provider integration
+4. **No SDK Packages** - SDK designs exist in `sdk/` but not published to PyPI/npm
+5. **Zero Test Coverage** - No unit or integration tests yet
+6. **No CI/CD Pipeline** - Build automation not configured
+7. **Langfuse/Lakera** - Integration interfaces only, no working clients
+
+**Production Requirements:**
+- Implement database repositories and migrations
+- Complete API handler business logic
+- Build and publish SDK packages
+- Add comprehensive test suites
+- Configure CI/CD with security scanning
+- Implement authentication middleware
 
 ---
 
@@ -466,39 +528,47 @@ result = agent_executor.invoke({"input": "Search for Q3 sales data"})
 
 ### Phase 1: Framework Foundation (Current)
 - [x] NIST AI RMF control definitions
-- [x] 800-53 crosswalk mapping
+- [x] NIST 800-53 crosswalk mapping
+- [x] Control taxonomy YAML structure
 - [ ] ISO 42001 mapping
 - [ ] Gap analysis CLI tool
+- [ ] Database layer implementation
+- [ ] API handler business logic
 
 <img src="../../../reference/templates/icons/homelab-svg-assets/assets/grafana.svg" width="24" height="24" alt="grafana">
 
 ### Phase 2: Observability
 
-- [ ] Python SDK (LangChain, CrewAI)
-- [ ] OTEL trace ingestion
+- [ ] Python SDK (LangChain, CrewAI middleware)
+- [ ] TypeScript SDK
+- [ ] OTEL trace ingestion pipeline
 - [ ] Security signal enrichment
 - [ ] Langfuse integration
+- [ ] ClickHouse telemetry storage
 
 <img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="24" height="24" alt="vault">
 
 ### Phase 3: Policy Engine
 
-- [ ] OPA integration
-- [ ] Tool access policies
+- [ ] OPA integration and policy evaluation
+- [ ] Tool access policies (Rego)
 - [ ] Data flow policies
 - [ ] Prompt injection detection
+- [ ] Runtime policy enforcement
 
 ### Phase 4: Governance Portal
-- [ ] Control explorer UI
+- [ ] Control explorer UI (React/Next.js)
 - [ ] Agent registry
 - [ ] Maturity assessment wizard
 - [ ] Audit report generation
+- [ ] Dashboard analytics
 
 ### Phase 5: Enterprise Integration
 - [ ] ServiceNow GRC integration
 - [ ] RSA Archer integration
 - [ ] Lakera Guard integration
 - [ ] SIEM export (Splunk, Sentinel)
+- [ ] OIDC authentication (Okta/Entra ID)
 
 ## License
 
