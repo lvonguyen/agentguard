@@ -6,17 +6,29 @@ import (
 	"time"
 
 	"github.com/agentguard/agentguard/internal/config"
+	"github.com/agentguard/agentguard/internal/repository"
 	"github.com/gin-gonic/gin"
 )
 
+// RouterDeps holds dependencies for router initialization.
+type RouterDeps struct {
+	ControlRepo repository.ControlRepository
+}
+
 // NewRouter creates and configures the HTTP router.
-func NewRouter(cfg *config.Config) *gin.Engine {
+func NewRouter(cfg *config.Config, deps *RouterDeps) *gin.Engine {
 	gin.SetMode(gin.ReleaseMode)
-	
+
 	r := gin.New()
 	r.Use(gin.Recovery())
 	r.Use(corsMiddleware(cfg.Server.CORSOrigins))
 	r.Use(requestLogger())
+
+	// Create handlers with dependencies
+	var h *Handlers
+	if deps != nil && deps.ControlRepo != nil {
+		h = NewHandlers(deps.ControlRepo)
+	}
 
 	// Health check
 	r.GET("/health", healthCheck)
@@ -28,12 +40,25 @@ func NewRouter(cfg *config.Config) *gin.Engine {
 		// Control Framework endpoints
 		controls := v1.Group("/controls")
 		{
-			controls.GET("/frameworks", listFrameworks)
-			controls.GET("/frameworks/:id", getFramework)
-			controls.GET("/frameworks/:id/controls", listControls)
-			controls.GET("/controls/:id", getControl)
-			controls.GET("/crosswalk", getCrosswalk)
-			controls.POST("/gaps/analyze", analyzeGaps)
+			if h != nil {
+				// Use repository-backed handlers
+				controls.GET("/frameworks", h.ListFrameworks)
+				controls.GET("/frameworks/:id", h.GetFramework)
+				controls.GET("/frameworks/:id/controls", h.ListControls)
+				controls.GET("/controls/:id", h.GetControl)
+				controls.GET("/crosswalk", h.GetCrosswalk)
+				controls.POST("/frameworks", h.CreateFramework)
+				controls.POST("/controls", h.CreateControl)
+				controls.POST("/gaps/analyze", h.AnalyzeGaps)
+			} else {
+				// Fallback to stub handlers (for testing without DB)
+				controls.GET("/frameworks", listFrameworks)
+				controls.GET("/frameworks/:id", getFramework)
+				controls.GET("/frameworks/:id/controls", listControls)
+				controls.GET("/controls/:id", getControl)
+				controls.GET("/crosswalk", getCrosswalk)
+				controls.POST("/gaps/analyze", analyzeGaps)
+			}
 		}
 
 		// Agent Registry endpoints

@@ -1,0 +1,174 @@
+package api
+
+import (
+	"net/http"
+
+	"github.com/agentguard/agentguard/internal/models"
+	"github.com/agentguard/agentguard/internal/repository"
+	"github.com/gin-gonic/gin"
+	"github.com/rs/zerolog/log"
+)
+
+// Handlers holds all API handlers with their dependencies.
+type Handlers struct {
+	ControlRepo repository.ControlRepository
+	// AgentRepo   repository.AgentRepository  // TODO: implement
+	// PolicyRepo  repository.PolicyRepository // TODO: implement
+}
+
+// NewHandlers creates a new Handlers instance.
+func NewHandlers(controlRepo repository.ControlRepository) *Handlers {
+	return &Handlers{
+		ControlRepo: controlRepo,
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Control Framework Handlers
+// -----------------------------------------------------------------------------
+
+// ListFrameworks returns all compliance frameworks.
+func (h *Handlers) ListFrameworks(c *gin.Context) {
+	ctx := c.Request.Context()
+
+	frameworks, err := h.ControlRepo.ListFrameworks(ctx)
+	if err != nil {
+		log.Error().Err(err).Msg("failed to list frameworks")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to list frameworks"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"frameworks": frameworks})
+}
+
+// GetFramework returns a single framework by ID.
+func (h *Handlers) GetFramework(c *gin.Context) {
+	ctx := c.Request.Context()
+	id := c.Param("id")
+
+	framework, err := h.ControlRepo.GetFramework(ctx, id)
+	if err != nil {
+		log.Error().Err(err).Str("id", id).Msg("failed to get framework")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to get framework"})
+		return
+	}
+
+	if framework == nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "framework not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, framework)
+}
+
+// ListControls returns all controls for a framework.
+func (h *Handlers) ListControls(c *gin.Context) {
+	ctx := c.Request.Context()
+	frameworkID := c.Param("id")
+
+	controls, err := h.ControlRepo.ListControls(ctx, frameworkID)
+	if err != nil {
+		log.Error().Err(err).Str("framework_id", frameworkID).Msg("failed to list controls")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to list controls"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"framework_id": frameworkID,
+		"controls":     controls,
+		"count":        len(controls),
+	})
+}
+
+// GetControl returns a single control by ID.
+func (h *Handlers) GetControl(c *gin.Context) {
+	ctx := c.Request.Context()
+	id := c.Param("id")
+
+	control, err := h.ControlRepo.GetControl(ctx, id)
+	if err != nil {
+		log.Error().Err(err).Str("id", id).Msg("failed to get control")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to get control"})
+		return
+	}
+
+	if control == nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "control not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, control)
+}
+
+// GetCrosswalk returns crosswalks between two frameworks.
+func (h *Handlers) GetCrosswalk(c *gin.Context) {
+	ctx := c.Request.Context()
+	source := c.Query("source")
+	target := c.Query("target")
+
+	if source == "" || target == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "source and target query parameters required"})
+		return
+	}
+
+	crosswalks, err := h.ControlRepo.GetCrosswalk(ctx, source, target)
+	if err != nil {
+		log.Error().Err(err).
+			Str("source", source).
+			Str("target", target).
+			Msg("failed to get crosswalk")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to get crosswalk"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"source":   source,
+		"target":   target,
+		"mappings": crosswalks,
+		"count":    len(crosswalks),
+	})
+}
+
+// CreateFramework creates a new framework.
+func (h *Handlers) CreateFramework(c *gin.Context) {
+	ctx := c.Request.Context()
+
+	var framework models.Framework
+	if err := c.ShouldBindJSON(&framework); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
+		return
+	}
+
+	if err := h.ControlRepo.CreateFramework(ctx, &framework); err != nil {
+		log.Error().Err(err).Msg("failed to create framework")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to create framework"})
+		return
+	}
+
+	c.JSON(http.StatusCreated, framework)
+}
+
+// CreateControl creates a new control.
+func (h *Handlers) CreateControl(c *gin.Context) {
+	ctx := c.Request.Context()
+
+	var control models.Control
+	if err := c.ShouldBindJSON(&control); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
+		return
+	}
+
+	if err := h.ControlRepo.CreateControl(ctx, &control); err != nil {
+		log.Error().Err(err).Msg("failed to create control")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to create control"})
+		return
+	}
+
+	c.JSON(http.StatusCreated, control)
+}
+
+// AnalyzeGaps analyzes gaps between frameworks.
+func (h *Handlers) AnalyzeGaps(c *gin.Context) {
+	// TODO: Implement gap analysis logic
+	c.JSON(http.StatusOK, gin.H{"status": "not_implemented"})
+}
