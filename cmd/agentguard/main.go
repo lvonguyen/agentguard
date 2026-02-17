@@ -199,6 +199,18 @@ func runServer(cmd *cobra.Command, args []string) error {
 		log.Info().Msg("No database configured, using stub handlers")
 	}
 
+	// Initialize gap analyzer (can work without DB using embedded data)
+	gapAnalyzer, err := controls.NewGapAnalyzer("")
+	if err != nil {
+		log.Warn().Err(err).Msg("Gap analyzer initialization failed")
+	} else {
+		log.Info().Msg("Gap analyzer initialized with embedded frameworks")
+		if deps == nil {
+			deps = &api.RouterDeps{}
+		}
+		deps.GapAnalyzer = gapAnalyzer
+	}
+
 	// Initialize router with dependencies
 	router := api.NewRouter(cfg, deps)
 

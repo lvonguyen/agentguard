@@ -3,6 +3,7 @@ package api
 import (
 	"net/http"
 
+	"github.com/agentguard/agentguard/internal/controls"
 	"github.com/agentguard/agentguard/internal/models"
 	"github.com/agentguard/agentguard/internal/repository"
 	"github.com/gin-gonic/gin"
@@ -12,14 +13,16 @@ import (
 // Handlers holds all API handlers with their dependencies.
 type Handlers struct {
 	ControlRepo repository.ControlRepository
+	GapAnalyzer *controls.GapAnalyzer
 	// AgentRepo   repository.AgentRepository  // TODO: implement
 	// PolicyRepo  repository.PolicyRepository // TODO: implement
 }
 
 // NewHandlers creates a new Handlers instance.
-func NewHandlers(controlRepo repository.ControlRepository) *Handlers {
+func NewHandlers(controlRepo repository.ControlRepository, gapAnalyzer *controls.GapAnalyzer) *Handlers {
 	return &Handlers{
 		ControlRepo: controlRepo,
+		GapAnalyzer: gapAnalyzer,
 	}
 }
 
@@ -167,8 +170,71 @@ func (h *Handlers) CreateControl(c *gin.Context) {
 	c.JSON(http.StatusCreated, control)
 }
 
+// GapAnalysisRequest represents a gap analysis request.
+type GapAnalysisRequest struct {
+	TargetFramework     string   `json:"target_framework" binding:"required"`
+	ImplementedControls []string `json:"implemented_controls"`
+	SourceFramework     string   `json:"source_framework,omitempty"`
+}
+
 // AnalyzeGaps analyzes gaps between frameworks.
 func (h *Handlers) AnalyzeGaps(c *gin.Context) {
-	// TODO: Implement gap analysis logic
-	c.JSON(http.StatusOK, gin.H{"status": "not_implemented"})
+	if h.GapAnalyzer == nil {
+		c.JSON(http.StatusServiceUnavailable, gin.H{"error": "gap analyzer not initialized"})
+		return
+	}
+
+	var req GapAnalysisRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body: " + err.Error()})
+		return
+	}
+
+	input := &controls.AnalysisInput{
+		TargetFramework:     req.TargetFramework,
+		ImplementedControls: req.ImplementedControls,
+		SourceFramework:     req.SourceFramework,
+	}
+
+	output, err := h.GapAnalyzer.RunAnalysis(c.Request.Context(), input)
+	if err != nil {
+		log.Error().Err(err).Str("framework", req.TargetFramework).Msg("gap analysis failed")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "analysis failed: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, output)
+}
+
+// GetGapAnalysisSummary returns a summary of gaps for a framework.
+func (h *Handlers) GetGapAnalysisSummary(c *gin.Context) {
+	if h.GapAnalyzer == nil {
+		c.JSON(http.StatusServiceUnavailable, gin.H{"error": "gap analyzer not initialized"})
+		return
+	}
+
+	frameworkID := c.Query("framework")
+	if frameworkID == "" {
+		frameworkID = "nist-ai-rmf" // default
+	}
+
+	// Run analysis with no implemented controls to get full gap list
+	input := &controls.AnalysisInput{
+		TargetFramework:     frameworkID,
+		ImplementedControls: []string{},
+	}
+
+	output, err := h.GapAnalyzer.RunAnalysis(c.Request.Context(), input)
+	if err != nil {
+		log.Error().Err(err).Str("framework", frameworkID).Msg("gap summary failed")
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "analysis failed"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"framework":      output.Framework,
+		"framework_name": output.FrameworkName,
+		"total_controls": output.TotalControls,
+		"summary":        output.Summary,
+	})
 }

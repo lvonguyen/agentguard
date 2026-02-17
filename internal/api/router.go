@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/agentguard/agentguard/internal/config"
+	"github.com/agentguard/agentguard/internal/controls"
 	"github.com/agentguard/agentguard/internal/repository"
 	"github.com/gin-gonic/gin"
 )
@@ -13,6 +14,7 @@ import (
 // RouterDeps holds dependencies for router initialization.
 type RouterDeps struct {
 	ControlRepo repository.ControlRepository
+	GapAnalyzer *controls.GapAnalyzer
 }
 
 // NewRouter creates and configures the HTTP router.
@@ -27,7 +29,7 @@ func NewRouter(cfg *config.Config, deps *RouterDeps) *gin.Engine {
 	// Create handlers with dependencies
 	var h *Handlers
 	if deps != nil && deps.ControlRepo != nil {
-		h = NewHandlers(deps.ControlRepo)
+		h = NewHandlers(deps.ControlRepo, deps.GapAnalyzer)
 	}
 
 	// Health check
