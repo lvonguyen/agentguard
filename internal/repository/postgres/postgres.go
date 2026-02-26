@@ -28,16 +28,27 @@ type DB struct {
 }
 
 // New creates a new PostgreSQL connection pool.
+// Uses struct-based config to avoid embedding credentials in the DSN string,
+// which would leak passwords in error messages and log output.
 func New(ctx context.Context, cfg Config) (*DB, error) {
-	connStr := fmt.Sprintf(
-		"postgres://%s:%s@%s:%d/%s?sslmode=%s",
-		cfg.User, cfg.Password, cfg.Host, cfg.Port, cfg.Database, cfg.SSLMode,
+	// Build DSN without password — set password via struct field to keep it
+	// out of error-path string representations.
+	dsn := fmt.Sprintf(
+		"postgres://%s@%s:%d/%s?sslmode=%s",
+		cfg.User, cfg.Host, cfg.Port, cfg.Database, cfg.SSLMode,
 	)
 
-	poolCfg, err := pgxpool.ParseConfig(connStr)
-	if err != nil {
-		return nil, fmt.Errorf("parsing connection string: %w", err)
+	if cfg.MaxConns == 0 {
+		cfg.MaxConns = 25
 	}
+
+	poolCfg, err := pgxpool.ParseConfig(dsn)
+	if err != nil {
+		return nil, fmt.Errorf("parsing connection config: %w", err)
+	}
+
+	// Set password via struct field — never appears in DSN string or error messages.
+	poolCfg.ConnConfig.Password = cfg.Password
 
 	// Connection pool settings
 	poolCfg.MaxConns = cfg.MaxConns
@@ -76,6 +87,17 @@ func (db *DB) Close() {
 
 // Health checks if the database connection is healthy.
 func (db *DB) Health(ctx context.Context) error {
+	if db.Pool == nil {
+		return fmt.Errorf("database pool not initialized")
+	}
+	return db.Pool.Ping(ctx)
+}
+
+// Ping is an alias for Health for interface compatibility.
+func (db *DB) Ping(ctx context.Context) error {
+	if db.Pool == nil {
+		return fmt.Errorf("database pool not initialized")
+	}
 	return db.Pool.Ping(ctx)
 }
 
@@ -94,6 +116,9 @@ func (db *DB) WithTx(ctx context.Context, fn func(ctx context.Context, tx pgx.Tx
 	}
 
 	if err := tx.Commit(ctx); err != nil {
+		if rbErr := tx.Rollback(ctx); rbErr != nil {
+			log.Error().Err(rbErr).Msg("failed to rollback after commit failure")
+		}
 		return fmt.Errorf("committing transaction: %w", err)
 	}
 

@@ -3,7 +3,10 @@ package telemetry
 
 import (
 	"context"
+	"errors"
 	"fmt"
+	"os"
+	"strings"
 	"time"
 
 	"go.opentelemetry.io/otel"
@@ -15,8 +18,9 @@ import (
 	sdkmetric "go.opentelemetry.io/otel/sdk/metric"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
-	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.34.0"
 	"go.opentelemetry.io/otel/trace"
+	"google.golang.org/grpc/credentials"
 )
 
 // Config holds telemetry configuration
@@ -37,11 +41,11 @@ type Provider struct {
 	meter          metric.Meter
 
 	// LLM-specific metrics
-	requestCounter   metric.Int64Counter
-	requestDuration  metric.Float64Histogram
-	tokenCounter     metric.Int64Counter
-	errorCounter     metric.Int64Counter
-	activeRequests   metric.Int64UpDownCounter
+	requestCounter  metric.Int64Counter
+	requestDuration metric.Float64Histogram
+	tokenCounter    metric.Int64Counter
+	errorCounter    metric.Int64Counter
+	activeRequests  metric.Int64UpDownCounter
 }
 
 // NewProvider creates a new telemetry provider
@@ -62,11 +66,17 @@ func NewProvider(cfg Config) (*Provider, error) {
 		return nil, fmt.Errorf("failed to create resource: %w", err)
 	}
 
-	// Setup trace exporter
-	traceExporter, err := otlptracegrpc.New(ctx,
+	// Setup trace exporter — use TLS by default, plaintext only when OTEL_INSECURE=true
+	exporterOpts := []otlptracegrpc.Option{
 		otlptracegrpc.WithEndpoint(cfg.OTLPEndpoint),
-		otlptracegrpc.WithInsecure(),
-	)
+	}
+	if strings.EqualFold(os.Getenv("OTEL_INSECURE"), "true") {
+		exporterOpts = append(exporterOpts, otlptracegrpc.WithInsecure())
+	} else {
+		exporterOpts = append(exporterOpts, otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, "")))
+	}
+
+	traceExporter, err := otlptracegrpc.New(ctx, exporterOpts...)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create trace exporter: %w", err)
 	}
@@ -172,26 +182,28 @@ func (p *Provider) Meter() metric.Meter {
 	return p.meter
 }
 
-// Shutdown gracefully shuts down telemetry providers
+// Shutdown gracefully shuts down telemetry providers.
+// Both tracer and meter are shut down regardless of individual failures.
 func (p *Provider) Shutdown(ctx context.Context) error {
+	var errs []error
 	if err := p.tracerProvider.Shutdown(ctx); err != nil {
-		return fmt.Errorf("failed to shutdown tracer provider: %w", err)
+		errs = append(errs, fmt.Errorf("tracer provider shutdown: %w", err))
 	}
 	if err := p.meterProvider.Shutdown(ctx); err != nil {
-		return fmt.Errorf("failed to shutdown meter provider: %w", err)
+		errs = append(errs, fmt.Errorf("meter provider shutdown: %w", err))
 	}
-	return nil
+	return errors.Join(errs...)
 }
 
 // LLMRequestMetrics records metrics for an LLM request
 type LLMRequestMetrics struct {
-	Provider      string
-	Model         string
-	InputTokens   int64
-	OutputTokens  int64
-	Duration      time.Duration
-	Success       bool
-	ErrorType     string
+	Provider     string
+	Model        string
+	InputTokens  int64
+	OutputTokens int64
+	Duration     time.Duration
+	Success      bool
+	ErrorType    string
 }
 
 // RecordLLMRequest records metrics for an LLM request
@@ -205,15 +217,21 @@ func (p *Provider) RecordLLMRequest(ctx context.Context, m LLMRequestMetrics) {
 	p.requestCounter.Add(ctx, 1, metric.WithAttributes(attrs...))
 	p.requestDuration.Record(ctx, m.Duration.Seconds(), metric.WithAttributes(attrs...))
 
-	tokenAttrs := append(attrs, attribute.String("type", "input"))
-	p.tokenCounter.Add(ctx, m.InputTokens, metric.WithAttributes(tokenAttrs...))
+	inputAttrs := make([]attribute.KeyValue, len(attrs), len(attrs)+1)
+	copy(inputAttrs, attrs)
+	inputAttrs = append(inputAttrs, attribute.String("type", "input"))
+	p.tokenCounter.Add(ctx, m.InputTokens, metric.WithAttributes(inputAttrs...))
 
-	tokenAttrs = append(attrs[:len(attrs)-1], attribute.String("type", "output"))
-	p.tokenCounter.Add(ctx, m.OutputTokens, metric.WithAttributes(tokenAttrs...))
+	outputAttrs := make([]attribute.KeyValue, len(attrs), len(attrs)+1)
+	copy(outputAttrs, attrs)
+	outputAttrs = append(outputAttrs, attribute.String("type", "output"))
+	p.tokenCounter.Add(ctx, m.OutputTokens, metric.WithAttributes(outputAttrs...))
 
 	if !m.Success {
-		errorAttrs := append(attrs, attribute.String("error_type", m.ErrorType))
-		p.errorCounter.Add(ctx, 1, metric.WithAttributes(errorAttrs...))
+		errAttrs := make([]attribute.KeyValue, len(attrs), len(attrs)+1)
+		copy(errAttrs, attrs)
+		errAttrs = append(errAttrs, attribute.String("error_type", m.ErrorType))
+		p.errorCounter.Add(ctx, 1, metric.WithAttributes(errAttrs...))
 	}
 }
 
@@ -239,6 +257,3 @@ func (p *Provider) EndRequest(ctx context.Context, provider, model string) {
 func (p *Provider) StartSpan(ctx context.Context, name string, opts ...trace.SpanStartOption) (context.Context, trace.Span) {
 	return p.tracer.Start(ctx, name, opts...)
 }
-
-
-

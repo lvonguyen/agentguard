@@ -86,7 +86,7 @@ func (m *HTTPMetrics) Middleware(tracer trace.Tracer) func(http.Handler) http.Ha
 			ctx, span := tracer.Start(r.Context(), r.URL.Path,
 				trace.WithAttributes(
 					attribute.String("http.method", r.Method),
-					attribute.String("http.url", r.URL.String()),
+					attribute.String("http.url", r.URL.Path), // Path only — omit query params to avoid PII exposure
 					attribute.String("http.user_agent", r.UserAgent()),
 				),
 			)
@@ -122,5 +122,3 @@ func (m *HTTPMetrics) Middleware(tracer trace.Tracer) func(http.Handler) http.Ha
 		})
 	}
 }
-
-

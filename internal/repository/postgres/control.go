@@ -93,7 +93,7 @@ func (r *ControlRepository) CreateFramework(ctx context.Context, f *models.Frame
 func (r *ControlRepository) UpdateFramework(ctx context.Context, f *models.Framework) error {
 	query := `
 		UPDATE frameworks
-		SET name = $2, version = $3, publisher = $4, description = $5, url = $6
+		SET name = $2, version = $3, publisher = $4, description = $5, url = $6, updated_at = NOW()
 		WHERE id = $1`
 
 	result, err := r.db.Pool.Exec(ctx, query,
@@ -197,11 +197,19 @@ func (r *ControlRepository) GetControl(ctx context.Context, id string) (*models.
 		return nil, fmt.Errorf("getting control %s: %w", id, err)
 	}
 
-	// Unmarshal JSONB arrays
-	json.Unmarshal(objectives, &c.Objectives)
-	json.Unmarshal(activities, &c.Activities)
-	json.Unmarshal(evidenceTypes, &c.EvidenceTypes)
-	json.Unmarshal(applicableLayers, &c.ApplicableLayers)
+	// Unmarshal JSONB arrays (fall back to empty slices on malformed data)
+	if err := json.Unmarshal(objectives, &c.Objectives); err != nil {
+		c.Objectives = []string{}
+	}
+	if err := json.Unmarshal(activities, &c.Activities); err != nil {
+		c.Activities = []string{}
+	}
+	if err := json.Unmarshal(evidenceTypes, &c.EvidenceTypes); err != nil {
+		c.EvidenceTypes = []string{}
+	}
+	if err := json.Unmarshal(applicableLayers, &c.ApplicableLayers); err != nil {
+		c.ApplicableLayers = []string{}
+	}
 
 	return &c, nil
 }
@@ -239,7 +247,8 @@ func (r *ControlRepository) UpdateControl(ctx context.Context, c *models.Control
 	query := `
 		UPDATE controls
 		SET framework_id = $2, control_id = $3, title = $4, description = $5,
-		    objectives = $6, activities = $7, evidence_types = $8, applicable_layers = $9, parent_control_id = $10
+		    objectives = $6, activities = $7, evidence_types = $8, applicable_layers = $9, parent_control_id = $10,
+		    updated_at = NOW()
 		WHERE id = $1`
 
 	result, err := r.db.Pool.Exec(ctx, query,
@@ -305,9 +314,15 @@ func (r *ControlRepository) GetCrosswalk(ctx context.Context, sourceFrameworkID,
 			return nil, fmt.Errorf("scanning crosswalk: %w", err)
 		}
 
-		json.Unmarshal(gaps, &cw.Gaps)
-		json.Unmarshal(supplements, &cw.Supplements)
-		json.Unmarshal(evidenceMapping, &cw.EvidenceMapping)
+		if err := json.Unmarshal(gaps, &cw.Gaps); err != nil {
+			return nil, fmt.Errorf("unmarshaling crosswalk gaps: %w", err)
+		}
+		if err := json.Unmarshal(supplements, &cw.Supplements); err != nil {
+			return nil, fmt.Errorf("unmarshaling crosswalk supplements: %w", err)
+		}
+		if err := json.Unmarshal(evidenceMapping, &cw.EvidenceMapping); err != nil {
+			return nil, fmt.Errorf("unmarshaling crosswalk evidence_mapping: %w", err)
+		}
 
 		crosswalks = append(crosswalks, cw)
 	}

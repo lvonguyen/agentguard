@@ -16,10 +16,10 @@ import (
 type FrameworkID string
 
 const (
-	FrameworkNISTAIRMF  FrameworkID = "nist-ai-rmf"
-	FrameworkNIST80053  FrameworkID = "nist-800-53"
-	FrameworkISO42001   FrameworkID = "iso-42001"
-	FrameworkSOC2       FrameworkID = "soc2"
+	FrameworkNISTAIRMF FrameworkID = "nist-ai-rmf"
+	FrameworkNIST80053 FrameworkID = "nist-800-53"
+	FrameworkISO42001  FrameworkID = "iso-42001"
+	FrameworkSOC2      FrameworkID = "soc2"
 )
 
 // Service provides control framework operations.
@@ -236,12 +236,22 @@ func (s *Service) AnalyzeGaps(ctx context.Context, targetFramework FrameworkID, 
 			partiallyCovered++
 		}
 
-		if !partial {
+		if partial {
 			gap := models.ControlGap{
-				ControlID:   ctrl.ControlID,
-				GapType:     "not_implemented",
-				Description: fmt.Sprintf("Control '%s' (%s) is not implemented", ctrl.ControlID, ctrl.Title),
-				Priority:    determineGapPriority(ctrl),
+				ControlID:          ctrl.ControlID,
+				GapType:            "partial",
+				Description:        fmt.Sprintf("Control '%s' (%s) is only partially covered", ctrl.ControlID, ctrl.Title),
+				Priority:           determineGapPriority(ctrl),
+				RemediationOptions: generateRemediationOptions(ctrl),
+				EstimatedEffort:    estimateEffort(ctrl),
+			}
+			gaps = append(gaps, gap)
+		} else {
+			gap := models.ControlGap{
+				ControlID:          ctrl.ControlID,
+				GapType:            "not_implemented",
+				Description:        fmt.Sprintf("Control '%s' (%s) is not implemented", ctrl.ControlID, ctrl.Title),
+				Priority:           determineGapPriority(ctrl),
 				RemediationOptions: generateRemediationOptions(ctrl),
 				EstimatedEffort:    estimateEffort(ctrl),
 			}
@@ -251,7 +261,10 @@ func (s *Service) AnalyzeGaps(ctx context.Context, targetFramework FrameworkID, 
 
 	totalControls := len(controls)
 	notCovered := totalControls - fullyCovered - partiallyCovered
-	coverage := float64(fullyCovered) / float64(totalControls) * 100
+	var coverage float64
+	if totalControls > 0 {
+		coverage = float64(fullyCovered) / float64(totalControls) * 100
+	}
 
 	gapsByPriority := make(map[string]int)
 	for _, g := range gaps {

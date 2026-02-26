@@ -2,7 +2,10 @@ package storage
 
 import (
 	"context"
+	"fmt"
 	"io"
+
+	"github.com/rs/zerolog/log"
 )
 
 // Object represents a storage object
@@ -54,6 +57,7 @@ func NewAzureBlobProvider(cfg AzureBlobConfig) (*AzureBlobProvider, error) {
 }
 
 func (p *AzureBlobProvider) Upload(ctx context.Context, key string, content io.Reader, contentType string) error {
+	log.Warn().Msg("using stub azure storage provider — upload will be silently discarded")
 	// TODO: Implement Azure Blob upload using azblob SDK
 	// containerClient.NewBlockBlobClient(key).Upload(ctx, content, nil)
 	return nil
@@ -61,7 +65,7 @@ func (p *AzureBlobProvider) Upload(ctx context.Context, key string, content io.R
 
 func (p *AzureBlobProvider) Download(ctx context.Context, key string) (io.ReadCloser, error) {
 	// TODO: Implement Azure Blob download
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *AzureBlobProvider) Delete(ctx context.Context, key string) error {
@@ -71,7 +75,7 @@ func (p *AzureBlobProvider) Delete(ctx context.Context, key string) error {
 
 func (p *AzureBlobProvider) List(ctx context.Context, prefix string) ([]Object, error) {
 	// TODO: Implement Azure Blob list
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *AzureBlobProvider) Exists(ctx context.Context, key string) (bool, error) {
@@ -85,11 +89,11 @@ func (p *AzureBlobProvider) Name() string {
 
 // S3Config holds configuration for AWS S3
 type S3Config struct {
-	Region     string
-	Bucket     string
-	RoleARN    string // For cross-account access
-	UseOIDC    bool   // Use OIDC federation
-	Endpoint   string // Custom endpoint for S3-compatible storage
+	Region   string
+	Bucket   string
+	RoleARN  string // For cross-account access
+	UseOIDC  bool   // Use OIDC federation
+	Endpoint string // Custom endpoint for S3-compatible storage
 }
 
 // S3Provider implements storage using AWS S3
@@ -106,6 +110,7 @@ func NewS3Provider(cfg S3Config) (*S3Provider, error) {
 }
 
 func (p *S3Provider) Upload(ctx context.Context, key string, content io.Reader, contentType string) error {
+	log.Warn().Msg("using stub s3 storage provider — upload will be silently discarded")
 	// TODO: Implement S3 upload using AWS SDK v2
 	// client.PutObject(ctx, &s3.PutObjectInput{...})
 	return nil
@@ -113,7 +118,7 @@ func (p *S3Provider) Upload(ctx context.Context, key string, content io.Reader, 
 
 func (p *S3Provider) Download(ctx context.Context, key string) (io.ReadCloser, error) {
 	// TODO: Implement S3 download
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *S3Provider) Delete(ctx context.Context, key string) error {
@@ -123,7 +128,7 @@ func (p *S3Provider) Delete(ctx context.Context, key string) error {
 
 func (p *S3Provider) List(ctx context.Context, prefix string) ([]Object, error) {
 	// TODO: Implement S3 list
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *S3Provider) Exists(ctx context.Context, key string) (bool, error) {
@@ -155,13 +160,14 @@ func NewGCSProvider(cfg GCSConfig) (*GCSProvider, error) {
 }
 
 func (p *GCSProvider) Upload(ctx context.Context, key string, content io.Reader, contentType string) error {
+	log.Warn().Msg("using stub gcs storage provider — upload will be silently discarded")
 	// TODO: Implement GCS upload using cloud.google.com/go/storage
 	return nil
 }
 
 func (p *GCSProvider) Download(ctx context.Context, key string) (io.ReadCloser, error) {
 	// TODO: Implement GCS download
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *GCSProvider) Delete(ctx context.Context, key string) error {
@@ -171,7 +177,7 @@ func (p *GCSProvider) Delete(ctx context.Context, key string) error {
 
 func (p *GCSProvider) List(ctx context.Context, prefix string) ([]Object, error) {
 	// TODO: Implement GCS list
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *GCSProvider) Exists(ctx context.Context, key string) (bool, error) {

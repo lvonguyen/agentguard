@@ -11,22 +11,22 @@ import (
 
 // Config holds all application configuration.
 type Config struct {
-	Server     ServerConfig     `mapstructure:"server"`
-	Database   DatabaseConfig   `mapstructure:"database"`
-	Redis      RedisConfig      `mapstructure:"redis"`
-	OPA        OPAConfig        `mapstructure:"opa"`
-	OTEL       OTELConfig       `mapstructure:"otel"`
-	Auth       AuthConfig       `mapstructure:"auth"`
+	Server        ServerConfig        `mapstructure:"server"`
+	Database      DatabaseConfig      `mapstructure:"database"`
+	Redis         RedisConfig         `mapstructure:"redis"`
+	OPA           OPAConfig           `mapstructure:"opa"`
+	OTEL          OTELConfig          `mapstructure:"otel"`
+	Auth          AuthConfig          `mapstructure:"auth"`
 	Observability ObservabilityConfig `mapstructure:"observability"`
 }
 
 // ServerConfig holds HTTP server configuration.
 type ServerConfig struct {
-	Port            string `mapstructure:"port"`
-	Host            string `mapstructure:"host"`
-	ReadTimeout     int    `mapstructure:"read_timeout"`
-	WriteTimeout    int    `mapstructure:"write_timeout"`
-	ShutdownTimeout int    `mapstructure:"shutdown_timeout"`
+	Port            string   `mapstructure:"port"`
+	Host            string   `mapstructure:"host"`
+	ReadTimeout     int      `mapstructure:"read_timeout"`
+	WriteTimeout    int      `mapstructure:"write_timeout"`
+	ShutdownTimeout int      `mapstructure:"shutdown_timeout"`
 	CORSOrigins     []string `mapstructure:"cors_origins"`
 }
 
@@ -59,10 +59,10 @@ type OPAConfig struct {
 
 // OTELConfig holds OpenTelemetry configuration.
 type OTELConfig struct {
-	Enabled        bool   `mapstructure:"enabled"`
-	Endpoint       string `mapstructure:"endpoint"`
-	ServiceName    string `mapstructure:"service_name"`
-	ServiceVersion string `mapstructure:"service_version"`
+	Enabled        bool    `mapstructure:"enabled"`
+	Endpoint       string  `mapstructure:"endpoint"`
+	ServiceName    string  `mapstructure:"service_name"`
+	ServiceVersion string  `mapstructure:"service_version"`
 	SamplingRate   float64 `mapstructure:"sampling_rate"`
 }
 
@@ -74,12 +74,13 @@ type AuthConfig struct {
 	ClientID     string   `mapstructure:"client_id"`
 	ClientSecret string   `mapstructure:"client_secret"`
 	AllowedRoles []string `mapstructure:"allowed_roles"`
+	BearerToken  string   `mapstructure:"bearer_token"`
 }
 
 // ObservabilityConfig holds observability backend configuration.
 type ObservabilityConfig struct {
-	Langfuse     LangfuseConfig     `mapstructure:"langfuse"`
-	ClickHouse   ClickHouseConfig   `mapstructure:"clickhouse"`
+	Langfuse   LangfuseConfig   `mapstructure:"langfuse"`
+	ClickHouse ClickHouseConfig `mapstructure:"clickhouse"`
 }
 
 // LangfuseConfig holds Langfuse integration configuration.
@@ -119,7 +120,7 @@ func Load(path string) (*Config, error) {
 		v.AddConfigPath(".")
 		v.AddConfigPath("./config")
 		v.AddConfigPath("/etc/agentguard")
-		v.AddConfigPath("$HOME/.agentguard")
+		v.AddConfigPath(os.ExpandEnv("$HOME/.agentguard"))
 
 		if err := v.ReadInConfig(); err != nil {
 			if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
@@ -152,13 +153,13 @@ func setDefaults(v *viper.Viper) {
 	v.SetDefault("server.read_timeout", 15)
 	v.SetDefault("server.write_timeout", 15)
 	v.SetDefault("server.shutdown_timeout", 30)
-	v.SetDefault("server.cors_origins", []string{"*"})
+	v.SetDefault("server.cors_origins", []string{"http://localhost:3000"})
 
 	// Database defaults
 	v.SetDefault("database.host", "localhost")
 	v.SetDefault("database.port", 5432)
 	v.SetDefault("database.database", "agentguard")
-	v.SetDefault("database.sslmode", "disable")
+	v.SetDefault("database.sslmode", "require")
 	v.SetDefault("database.max_conns", 25)
 
 	// Redis defaults
@@ -214,12 +215,16 @@ func bindEnvVars(v *viper.Viper) {
 	if val := os.Getenv("OIDC_CLIENT_SECRET"); val != "" {
 		v.Set("auth.client_secret", val)
 	}
+	if val := os.Getenv("AUTH_BEARER_TOKEN"); val != "" {
+		v.Set("auth.bearer_token", val)
+	}
 }
 
-// DSN returns the PostgreSQL connection string.
+// DSN returns the PostgreSQL connection string with the password redacted.
+// Callers needing a real connection string should construct one using the Password field.
 func (c *DatabaseConfig) DSN() string {
 	return fmt.Sprintf(
-		"host=%s port=%d user=%s password=%s dbname=%s sslmode=%s",
-		c.Host, c.Port, c.User, c.Password, c.Database, c.SSLMode,
+		"host=%s port=%d user=%s password=REDACTED dbname=%s sslmode=%s",
+		c.Host, c.Port, c.User, c.Database, c.SSLMode,
 	)
 }

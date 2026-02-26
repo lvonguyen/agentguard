@@ -185,6 +185,12 @@ func runServer(cmd *cobra.Command, args []string) error {
 				Str("database", cfg.Database.Database).
 				Msg("Database connected")
 
+			if err := db.RunMigrations(ctx); err != nil {
+				log.Error().Err(err).Msg("Migration failed")
+				db.Close()
+				return fmt.Errorf("running migrations: %w", err)
+			}
+
 			// Create repositories
 			controlRepo := postgres.NewControlRepository(db)
 

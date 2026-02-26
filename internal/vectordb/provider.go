@@ -1,6 +1,11 @@
 package vectordb
 
-import "context"
+import (
+	"context"
+	"fmt"
+
+	"github.com/rs/zerolog/log"
+)
 
 // Document represents a document to be stored/retrieved from the vector database
 type Document struct {
@@ -13,9 +18,9 @@ type Document struct {
 
 // SearchRequest represents a vector search request
 type SearchRequest struct {
-	Query     string   // Natural language query (will be embedded)
-	Embedding []float32 // Pre-computed embedding (optional)
-	TopK      int       // Number of results to return
+	Query     string            // Natural language query (will be embedded)
+	Embedding []float32         // Pre-computed embedding (optional)
+	TopK      int               // Number of results to return
 	Filter    map[string]string // Metadata filters
 }
 
@@ -56,6 +61,7 @@ func NewAzureSearchProvider(cfg AzureSearchConfig) (*AzureSearchProvider, error)
 }
 
 func (p *AzureSearchProvider) Upsert(ctx context.Context, docs []Document) error {
+	log.Warn().Msg("using stub azure-search vector DB provider — data will be silently discarded")
 	// TODO: Implement Azure Search upsert
 	// POST https://{endpoint}/indexes/{index}/docs/index?api-version={version}
 	return nil
@@ -65,7 +71,7 @@ func (p *AzureSearchProvider) Search(ctx context.Context, req SearchRequest) ([]
 	// TODO: Implement Azure Search vector search
 	// POST https://{endpoint}/indexes/{index}/docs/search?api-version={version}
 	// Use vectorQueries for semantic search
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *AzureSearchProvider) Delete(ctx context.Context, ids []string) error {
@@ -96,13 +102,14 @@ func NewPineconeProvider(cfg PineconeConfig) (*PineconeProvider, error) {
 }
 
 func (p *PineconeProvider) Upsert(ctx context.Context, docs []Document) error {
+	log.Warn().Msg("using stub pinecone vector DB provider — data will be silently discarded")
 	// TODO: Implement Pinecone upsert
 	return nil
 }
 
 func (p *PineconeProvider) Search(ctx context.Context, req SearchRequest) ([]Document, error) {
 	// TODO: Implement Pinecone query
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *PineconeProvider) Delete(ctx context.Context, ids []string) error {
@@ -132,13 +139,14 @@ func NewWeaviateProvider(cfg WeaviateConfig) (*WeaviateProvider, error) {
 }
 
 func (p *WeaviateProvider) Upsert(ctx context.Context, docs []Document) error {
+	log.Warn().Msg("using stub weaviate vector DB provider — data will be silently discarded")
 	// TODO: Implement Weaviate batch import
 	return nil
 }
 
 func (p *WeaviateProvider) Search(ctx context.Context, req SearchRequest) ([]Document, error) {
 	// TODO: Implement Weaviate nearText/nearVector query
-	return nil, nil
+	return nil, fmt.Errorf("provider not implemented")
 }
 
 func (p *WeaviateProvider) Delete(ctx context.Context, ids []string) error {

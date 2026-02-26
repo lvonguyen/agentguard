@@ -3,6 +3,7 @@ package opa
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"sync"
 	"time"
@@ -10,14 +11,22 @@ import (
 	"github.com/open-policy-agent/opa/rego"
 	"github.com/open-policy-agent/opa/storage"
 	"github.com/open-policy-agent/opa/storage/inmem"
+	"github.com/rs/zerolog/log"
 )
 
 // Engine is the policy evaluation engine powered by OPA.
 type Engine struct {
-	mu       sync.RWMutex
-	queries  map[string]*rego.PreparedEvalQuery
-	store    storage.Store
-	compiler *rego.Rego
+	mu          sync.RWMutex
+	queries     map[string]*rego.PreparedEvalQuery
+	store       storage.Store
+	initialized bool // true once at least one policy is loaded
+}
+
+// Ready returns true if the engine has at least one policy loaded.
+func (e *Engine) Ready() bool {
+	e.mu.RLock()
+	defer e.mu.RUnlock()
+	return e.initialized
 }
 
 // Decision represents the result of a policy evaluation.
@@ -82,7 +91,7 @@ type RequestContext struct {
 // NewEngine creates a new policy engine.
 func NewEngine() (*Engine, error) {
 	store := inmem.New()
-	
+
 	return &Engine{
 		queries: make(map[string]*rego.PreparedEvalQuery),
 		store:   store,
@@ -94,27 +103,19 @@ func (e *Engine) LoadPolicies(ctx context.Context, paths []string) error {
 	e.mu.Lock()
 	defer e.mu.Unlock()
 
-	// Create a new Rego instance with all policy files
 	r := rego.New(
 		rego.Query("data.agentguard"),
 		rego.Store(e.store),
+		rego.Load(paths, nil),
 	)
 
-	for _, path := range paths {
-		r = rego.New(
-			rego.Query("data.agentguard"),
-			rego.Store(e.store),
-			rego.Load([]string{path}, nil),
-		)
-	}
-
-	// Prepare the query
 	pq, err := r.PrepareForEval(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to prepare policy: %w", err)
 	}
 
 	e.queries["default"] = &pq
+	e.initialized = true
 	return nil
 }
 
@@ -124,7 +125,7 @@ func (e *Engine) LoadPolicyBundle(ctx context.Context, bundlePath string) error 
 	defer e.mu.Unlock()
 
 	r := rego.New(
-		rego.Query("data.agentguard.allow"),
+		rego.Query("data.agentguard"),
 		rego.Store(e.store),
 		rego.LoadBundle(bundlePath),
 	)
@@ -135,17 +136,41 @@ func (e *Engine) LoadPolicyBundle(ctx context.Context, bundlePath string) error 
 	}
 
 	e.queries["default"] = &pq
+	e.initialized = true
 	return nil
 }
 
-// UpdateData updates the policy data store.
+// UpdateData updates the policy data store using the OPA storage transaction API.
 func (e *Engine) UpdateData(ctx context.Context, path string, data any) error {
 	e.mu.Lock()
 	defer e.mu.Unlock()
 
-	// TODO: Implement data update via OPA storage API
+	txn, err := e.store.NewTransaction(ctx, storage.WriteParams)
+	if err != nil {
+		return fmt.Errorf("starting storage transaction: %w", err)
+	}
+
+	storagePath, ok := storage.ParsePath("/" + path)
+	if !ok {
+		e.store.Abort(ctx, txn)
+		return fmt.Errorf("invalid storage path: %s", path)
+	}
+
+	if err := e.store.Write(ctx, txn, storage.AddOp, storagePath, data); err != nil {
+		e.store.Abort(ctx, txn)
+		return fmt.Errorf("writing to storage path %s: %w", path, err)
+	}
+
+	if err := e.store.Commit(ctx, txn); err != nil {
+		e.store.Abort(ctx, txn)
+		return fmt.Errorf("committing storage transaction: %w", err)
+	}
+
 	return nil
 }
+
+// maxOPAInputSize is the maximum serialized input size accepted by the OPA engine.
+const maxOPAInputSize = 1 << 20 // 1 MB
 
 // Evaluate evaluates a policy decision.
 func (e *Engine) Evaluate(ctx context.Context, policyPath string, input *EvaluationInput) (*Decision, error) {
@@ -157,10 +182,20 @@ func (e *Engine) Evaluate(ctx context.Context, policyPath string, input *Evaluat
 	// Get or create prepared query
 	pq, ok := e.queries[policyPath]
 	if !ok {
+		log.Warn().Str("policy", policyPath).Msg("policy not found, falling back to default")
 		pq = e.queries["default"]
 	}
 	if pq == nil {
 		return nil, fmt.Errorf("no policy loaded for path: %s", policyPath)
+	}
+
+	// Guard against oversized inputs to prevent memory exhaustion.
+	inputJSON, err := json.Marshal(input)
+	if err != nil {
+		return nil, fmt.Errorf("failed to serialize OPA input: %w", err)
+	}
+	if len(inputJSON) > maxOPAInputSize {
+		return nil, fmt.Errorf("OPA input exceeds maximum size of %d bytes", maxOPAInputSize)
 	}
 
 	// Evaluate the policy
@@ -217,7 +252,7 @@ func (e *Engine) EvaluateToolAccess(ctx context.Context, agent *AgentContext, to
 		Agent: *agent,
 		Tool:  tool,
 	}
-	return e.Evaluate(ctx, "agentguard.tool_access.allow", input)
+	return e.Evaluate(ctx, "default", input)
 }
 
 // EvaluateDataFlow evaluates data flow policy.
@@ -226,7 +261,7 @@ func (e *Engine) EvaluateDataFlow(ctx context.Context, agent *AgentContext, data
 		Agent: *agent,
 		Data:  data,
 	}
-	return e.Evaluate(ctx, "agentguard.data_flow.allow", input)
+	return e.Evaluate(ctx, "default", input)
 }
 
 func getString(m map[string]any, key string) string {
@@ -244,9 +279,10 @@ import future.keywords.in
 
 default allow = false
 
-# Allow if tool is in agent's allowed list and parameters pass validation
+# Allow if tool is in agent's allowed list, not blocked, and parameters pass validation
 allow {
     tool_allowed
+    not tool_blocked
     parameters_valid
     not rate_limit_exceeded
 }

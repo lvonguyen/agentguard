@@ -2,13 +2,28 @@ package api
 
 import (
 	"net/http"
+	"regexp"
 
 	"github.com/agentguard/agentguard/internal/controls"
 	"github.com/agentguard/agentguard/internal/models"
 	"github.com/agentguard/agentguard/internal/repository"
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"github.com/rs/zerolog/log"
 )
+
+var validFrameworkID = regexp.MustCompile(`^[a-z0-9][a-z0-9_-]{0,62}[a-z0-9]$`)
+
+// validID matches a UUID or a slug: non-empty, max 64 chars, safe chars only.
+var validID = regexp.MustCompile(`^[a-zA-Z0-9][a-zA-Z0-9._-]{0,62}[a-zA-Z0-9]$`)
+
+// validateID returns true if id is a valid UUID or slug.
+func validateID(id string) bool {
+	if _, err := uuid.Parse(id); err == nil {
+		return true
+	}
+	return validID.MatchString(id)
+}
 
 // Handlers holds all API handlers with their dependencies.
 type Handlers struct {
@@ -49,6 +64,11 @@ func (h *Handlers) GetFramework(c *gin.Context) {
 	ctx := c.Request.Context()
 	id := c.Param("id")
 
+	if !validateID(id) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid framework ID format"})
+		return
+	}
+
 	framework, err := h.ControlRepo.GetFramework(ctx, id)
 	if err != nil {
 		log.Error().Err(err).Str("id", id).Msg("failed to get framework")
@@ -69,6 +89,11 @@ func (h *Handlers) ListControls(c *gin.Context) {
 	ctx := c.Request.Context()
 	frameworkID := c.Param("id")
 
+	if !validateID(frameworkID) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid framework ID format"})
+		return
+	}
+
 	controls, err := h.ControlRepo.ListControls(ctx, frameworkID)
 	if err != nil {
 		log.Error().Err(err).Str("framework_id", frameworkID).Msg("failed to list controls")
@@ -87,6 +112,11 @@ func (h *Handlers) ListControls(c *gin.Context) {
 func (h *Handlers) GetControl(c *gin.Context) {
 	ctx := c.Request.Context()
 	id := c.Param("id")
+
+	if !validateID(id) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid control ID format"})
+		return
+	}
 
 	control, err := h.ControlRepo.GetControl(ctx, id)
 	if err != nil {
@@ -111,6 +141,11 @@ func (h *Handlers) GetCrosswalk(c *gin.Context) {
 
 	if source == "" || target == "" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "source and target query parameters required"})
+		return
+	}
+
+	if !validFrameworkID.MatchString(source) || !validFrameworkID.MatchString(target) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid framework ID format"})
 		return
 	}
 
@@ -142,6 +177,15 @@ func (h *Handlers) CreateFramework(c *gin.Context) {
 		return
 	}
 
+	if framework.ID == "" {
+		framework.ID = uuid.New().String()
+	} else if !validFrameworkID.MatchString(framework.ID) {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "invalid framework ID: must be 2-64 lowercase alphanumeric chars, hyphens, or underscores",
+		})
+		return
+	}
+
 	if err := h.ControlRepo.CreateFramework(ctx, &framework); err != nil {
 		log.Error().Err(err).Msg("failed to create framework")
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to create framework"})
@@ -158,6 +202,12 @@ func (h *Handlers) CreateControl(c *gin.Context) {
 	var control models.Control
 	if err := c.ShouldBindJSON(&control); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
+		return
+	}
+
+	// Validate required fields
+	if control.FrameworkID == "" || control.Title == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "framework_id and title are required"})
 		return
 	}
 
@@ -186,7 +236,7 @@ func (h *Handlers) AnalyzeGaps(c *gin.Context) {
 
 	var req GapAnalysisRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body: " + err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
 		return
 	}
 
@@ -199,7 +249,7 @@ func (h *Handlers) AnalyzeGaps(c *gin.Context) {
 	output, err := h.GapAnalyzer.RunAnalysis(c.Request.Context(), input)
 	if err != nil {
 		log.Error().Err(err).Str("framework", req.TargetFramework).Msg("gap analysis failed")
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "analysis failed: " + err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "analysis failed"})
 		return
 	}
 

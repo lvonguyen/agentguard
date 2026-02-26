@@ -35,15 +35,15 @@ type AnalysisInput struct {
 
 // AnalysisOutput represents the output of gap analysis.
 type AnalysisOutput struct {
-	Framework          string              `json:"framework"`
-	FrameworkName      string              `json:"framework_name"`
-	TotalControls      int                 `json:"total_controls"`
-	ImplementedCount   int                 `json:"implemented_count"`
-	GapCount           int                 `json:"gap_count"`
-	CoveragePercentage float64             `json:"coverage_percentage"`
-	Gaps               []GapDetail         `json:"gaps"`
-	Summary            GapSummaryOutput    `json:"summary"`
-	Crosswalks         []CrosswalkSummary  `json:"crosswalks,omitempty"`
+	Framework          string             `json:"framework"`
+	FrameworkName      string             `json:"framework_name"`
+	TotalControls      int                `json:"total_controls"`
+	ImplementedCount   int                `json:"implemented_count"`
+	GapCount           int                `json:"gap_count"`
+	CoveragePercentage float64            `json:"coverage_percentage"`
+	Gaps               []GapDetail        `json:"gaps"`
+	Summary            GapSummaryOutput   `json:"summary"`
+	Crosswalks         []CrosswalkSummary `json:"crosswalks,omitempty"`
 }
 
 // GapDetail provides details about a specific gap.
@@ -86,7 +86,10 @@ func (g *GapAnalyzer) RunAnalysis(ctx context.Context, input *AnalysisInput) (*A
 		return nil, err
 	}
 
-	controls, _ := g.service.GetControls(targetFW)
+	controls, err := g.service.GetControls(targetFW)
+	if err != nil {
+		return nil, fmt.Errorf("getting controls for %s: %w", input.TargetFramework, err)
+	}
 	controlMap := make(map[string]models.Control)
 	for _, c := range controls {
 		controlMap[strings.ToLower(c.ControlID)] = c
