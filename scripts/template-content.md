@@ -193,7 +193,7 @@ A leadership perspective series of economic, societal, business insight - brough
 
 We’re taking a clear stance and position on the issues that matter most to our clients - framed within 6 critical disruptive forces themes.
 
-Authored by key PwC leaders and SMEs with the objective to further their profiles.
+Authored by key Pinnacle Advisory leaders and SMEs with the objective to further their profiles.
 
 Read a summary of each article and find related assets on our Google site page
 
@@ -247,6 +247,6 @@ you
 <!-- Slide number: 10 -->
 Thank you
 April 2023
-© 2023 PwC. All rights reserved. PwC refers to the US member firm or one of its subsidiaries or affiliates, and may sometimes refer to the PwC network. Each member firm is a separate legal entity. Please see www.pwc.com/structure for further details. This proposal is protected under the copyright laws of the United States and other countries. This proposal contains information that is proprietary and confidential to PricewaterhouseCoopers LLP, and shall not be disclosed outside the recipient's company or duplicated, used or disclosed, in whole or in part, by the recipient for any purpose other than to evaluate this proposal. Any other use or disclosure, in whole or in part, of this information without the express written permission of PricewaterhouseCoopers LLP is prohibited.
+© 2023 Pinnacle Advisory. All rights reserved. Pinnacle Advisory refers to the US member firm or one of its subsidiaries or affiliates, and may sometimes refer to the Pinnacle Advisory network. Each member firm is a separate legal entity. This proposal is protected under the copyright laws of the United States and other countries. This proposal contains information that is proprietary and confidential to Pinnacle Advisory Group, and shall not be disclosed outside the recipient's company or duplicated, used or disclosed, in whole or in part, by the recipient for any purpose other than to evaluate this proposal. Any other use or disclosure, in whole or in part, of this information without the express written permission of Pinnacle Advisory Group is prohibited.
 
 ### Notes:
