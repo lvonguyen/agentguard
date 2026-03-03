@@ -1,0 +1,241 @@
+# GitHub Actions Auto-Detect CI Workflow
+# Automatically runs the right CI jobs based on project files.
+#
+# Usage — copy to .github/workflows/auto-ci.yml, or call as reusable:
+#
+#   jobs:
+#     ci:
+#       uses: lvonguyen/env-config/.github/workflows/auto-ci.yml@main
+
+name: Auto CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  # ──────────────────────────────────────────────
+  # Detect project type from files present
+  # ──────────────────────────────────────────────
+  detect:
+    name: Detect Project Type
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+      python: ${{ steps.check.outputs.python }}
+      docker: ${{ steps.check.outputs.docker }}
+      terraform: ${{ steps.check.outputs.terraform }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            go.mod
+            pyproject.toml
+            requirements.txt
+            setup.py
+            Dockerfile
+            docker-compose.yml
+            *.tf
+            **/*.tf
+          sparse-checkout-cone-mode: false
+
+      - id: check
+        run: |
+          echo "go=$([[ -f go.mod ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "python=$([[ -f pyproject.toml || -f requirements.txt || -f setup.py ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "docker=$([[ -f Dockerfile || -f docker-compose.yml ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "terraform=$([[ -n $(find . -name '*.tf' -print -quit 2>/dev/null) ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+  # ──────────────────────────────────────────────
+  # Go CI — lint, test, build
+  # ──────────────────────────────────────────────
+  go-ci:
+    name: Go CI
+    needs: [detect]
+    if: needs.detect.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v7
+        with:
+          version: v2.10.1
+
+      - name: Test
+        run: go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: go-coverage
+          path: coverage.out
+
+      - name: Build
+        run: CGO_ENABLED=0 go build -ldflags="-s -w" ./...
+
+  # ──────────────────────────────────────────────
+  # Python CI — lint, test, build
+  # ──────────────────────────────────────────────
+  python-ci:
+    name: Python CI
+    needs: [detect]
+    if: needs.detect.outputs.python == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Lint
+        run: |
+          uv pip install ruff --system
+          ruff check .
+          ruff format --check .
+
+      - name: Test
+        run: |
+          uv pip install pytest pytest-cov --system
+          uv pip install -e . --system || uv pip install -r requirements.txt --system
+          pytest -v --cov=. --cov-report=xml
+
+      - name: Build
+        run: |
+          uv pip install build --system
+          python -m build
+
+      - name: Upload dist
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: python-dist
+          path: dist/
+
+  # ──────────────────────────────────────────────
+  # Docker CI — build and scan
+  # ──────────────────────────────────────────────
+  docker-ci:
+    name: Docker CI
+    needs: [detect]
+    if: needs.detect.outputs.docker == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t ${{ github.event.repository.name }}:${{ github.sha }} .
+
+      - name: Trivy image scan
+        uses: aquasecurity/trivy-action@0.34.0
+        with:
+          image-ref: ${{ github.event.repository.name }}:${{ github.sha }}
+          format: 'sarif'
+          output: 'trivy-image.sarif'
+          severity: 'CRITICAL,HIGH'
+          exit-code: '0'
+
+      - name: Upload image scan results
+        uses: github/codeql-action/upload-sarif@v4
+        if: always() && hashFiles('trivy-image.sarif') != ''
+        continue-on-error: true
+        with:
+          sarif_file: 'trivy-image.sarif'
+          category: 'trivy-image'
+
+  # ──────────────────────────────────────────────
+  # Terraform CI — validate and lint
+  # ──────────────────────────────────────────────
+  terraform-ci:
+    name: Terraform CI
+    needs: [detect]
+    if: needs.detect.outputs.terraform == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.9'
+
+      - name: Format check
+        run: terraform fmt -check -recursive -diff
+
+      - name: Init and validate
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: TFLint
+        continue-on-error: true
+        run: |
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+          tflint --init
+          tflint --recursive
+
+  # ──────────────────────────────────────────────
+  # Security — always runs (trivy, gitleaks, semgrep)
+  # ──────────────────────────────────────────────
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Trivy filesystem scan
+        uses: aquasecurity/trivy-action@0.34.0
+        continue-on-error: true
+        with:
+          scan-type: 'fs'
+          format: 'sarif'
+          output: 'trivy-fs.sarif'
+          severity: 'CRITICAL,HIGH'
+          ignore-unfixed: true
+          exit-code: '0'
+
+      - name: Upload Trivy filesystem results
+        uses: github/codeql-action/upload-sarif@v4
+        if: always() && hashFiles('trivy-fs.sarif') != ''
+        continue-on-error: true
+        with:
+          sarif_file: 'trivy-fs.sarif'
+          category: 'trivy-fs'
+
+      - name: Gitleaks secret scan
+        uses: gitleaks/gitleaks-action@v2
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: 'true'
+          GITLEAKS_ENABLE_SUMMARY: 'true'
+
+      - name: Semgrep SAST scan
+        continue-on-error: true
+        run: |
+          pip install --quiet semgrep
+          semgrep scan --config auto --sarif --output semgrep.sarif . || true
+
+      - name: Upload Semgrep results
+        uses: github/codeql-action/upload-sarif@v4
+        if: always() && hashFiles('semgrep.sarif') != ''
+        continue-on-error: true
+        with:
+          sarif_file: 'semgrep.sarif'
+          category: 'semgrep'
