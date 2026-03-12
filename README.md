@@ -1,5 +1,19 @@
 <img src="../../../reference/templates/icons/homelab-svg-assets/assets/vault.svg" width="48" height="48" alt="AgentGuard" align="left" style="margin-right: 10px;">
 
+> **⚠️ ARCHIVED PROJECT**
+>
+> This repository is a technical demonstration and portfolio piece showcasing AI security governance patterns. It is **not production-ready**:
+> - 0% test coverage
+> - No database implementation (schema only)
+> - Stubbed API handlers
+> - No authentication layer
+>
+> Kept as a reference for AI security architecture patterns and compliance mapping approaches (NIST AI RMF → 800-53 → ISO 42001).
+>
+> **Status:** Early development (~25% complete), archived March 2026
+
+
+
 # AgentGuard
 
 ![Development Status](https://img.shields.io/badge/status-early%20development-orange)
